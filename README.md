@@ -1,2 +1,4 @@
-# codingpirates
-Notes and tutorials for my Coding Pirates classes
+Notes and materials for my Coding Pirates workshops.
+
+See the [[wiki]] for Notes and Tutorials
+
