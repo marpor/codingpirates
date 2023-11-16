@@ -67,6 +67,7 @@ Let's change _Hello World_ to our game's name.
 ```
 
  * Press **Run** to see your changes
+
 ![Webview](assets/step1.png)
 
  * Press the **New Tab** button to see what your game looks like outside of Replit
@@ -100,6 +101,7 @@ The body section of your code should now look like this:
 </body>
 ```
  * Press *Run* to see your changes:
+
 ![Webview](assets/step2.png)
 
 Exciting, right?
@@ -191,6 +193,7 @@ The body section of your code should now look like this:
 </body>
 ```
  * Press *Run* to see your changes:
+
 ![Webview](assets/step4a.png)
 
 It's a bit annoying that the Start button is on the same line as our emoji button.
@@ -220,6 +223,7 @@ It's a bit annoying that the Start button is on the same line as our emoji butto
   <button>❄️</button>
 </div>
 ```
+
 ![Webview](assets/step4b.png)
 
 It's starting to look a little bit like a game.
@@ -241,6 +245,7 @@ button {
 `margin` makes a bit of room between the buttons.
 
 It should look like this now:
+
 ![Webview](assets/step4c.png)
 
 _If you already know CSS, feel free to tweak the look and feel some more. You can get far with `background-color`, `color` on **html** and `border` on **button**._
@@ -484,6 +489,7 @@ Ok, ok, with just two emojis to pick from, the game is still rather easy. Let's 
 That ought to fix it, right?... Right?
 
  * Press Run and test the game
+
 ![Webview](assets/step10a.png)
 
 Ok, so sometime we still get multiple 'right' emojis. That's maybe not _so_ bad... But (and you've probably noticed this by now) sometimes we will get **no** right emojis at all 😒 And that kind of breaks the game 🪲🪳🕷️
@@ -518,6 +524,7 @@ function mixItUp() {
 ```
 
  * Try it - it _should_ work now
+
 ![Webview](assets/step10b.png)
 
 
