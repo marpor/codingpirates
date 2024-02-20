@@ -14,15 +14,15 @@ This guide picks up where Part 1 left off, so if you haven't already completed P
 
 * Scene Menu, Save Scene As
 
-![Save Scene As](assets/godot/save_scene_as.png)
+![Save Scene As](../assets/save_scene_as.png)
 
 * Press F6 to test the currently active scene
 
-![Run Current Scene](assets/godot/run_current_scene.png)
+![Run Current Scene](../assets/run_current_scene.png)
 
 * Or right-click on the scene file to make it the Main Scene
 
-![Set as Main Scene](assets/godot/set_as_main_scene.png)
+![Set as Main Scene](../assets/set_as_main_scene.png)
 
 * Flags change scene (see below)
 
@@ -33,13 +33,13 @@ This guide picks up where Part 1 left off, so if you haven't already completed P
 
 Here's an example:
 
-![Two Player Level Example](assets/godot/qs3d2/two_player_level_example.png)
+![Two Player Level Example](two_player_level_example.png)
 
 ## Adjust player speed/jump power
 
 * There are already properties on the Player node for this
 
-![Player Properties](assets/godot/qs3d2/player_properties.png)
+![Player Properties](player_properties.png)
 
 Bonus idea:
 
@@ -59,32 +59,4 @@ Bonus idea:
 
 ## Custom platforms ("modelled" in Godot)
 
-## Moving platforms
-
-**Important**: Change the body type of *the platform* from "StaticBody3D" to "CharacterBody3D" (otherwise the platform won't move the player)
-
-* Easy: Move using sinus (look at coin.gd for inspiration)
-* Easy: Rotate around a point (coin.gd, but also move the platform away from the origin point)
-* Harder: Move between two points. Either specify the two points using coordinates, or maybe use an @export var Path
-
-
-# Moving platforms
-
-* Select the platform you want to make moving
-* Click the Attach Script button
-
-![Attach Script](assets/godot/qs3d2/platform_attach_script.png)
-![[moving_platforms1.png]]
-
-* Update the name of the script (in Path)
-* Press Create
-
-![[moving_platform2.png]]
-
-* Add a line `@onready var start_position = position` after `extends Node3D` like this
-
-```gdscript
-extends Node3D
-
-@onready var start_position := position
-```
+TODO

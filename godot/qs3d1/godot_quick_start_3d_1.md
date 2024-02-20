@@ -13,12 +13,12 @@ If this is your first Godot Tutorial, you may want to:
 * Go to www.godotengine.org
 * Click the "Download Latest" button
 
-![Download Latest](assets/godot/download_latest.png)
+![Download Latest](../../assets/godot/download_latest.png)
 
 * Once downloaded, Open the file
 * Drag the file _without_ "console" in the name to your Desktop (or another place where you can easily find it again)
 
-![Unpack Windows](assets/godot/unpack_windows.png)
+![Unpack Windows](../../assets/godot/unpack_windows.png)
 
 It may look slightly different depending on your version of Windows, or on Mac, but it's still pretty similar.
 
@@ -28,7 +28,7 @@ It may look slightly different depending on your version of Windows, or on Mac, 
 
 The first thing you see in Godot is the Project Manager:
 
-![Project Manager](assets/godot/projectmanager.png)
+![Project Manager](../../assets/godot/projectmanager.png)
 
 If you've used Godot before, it will list your previous projects here.
 
@@ -41,12 +41,12 @@ In this guide, however, we will use a specific, _and awesome_ template available
 * Click on the the *Asset Library Projects* tab
 * In the Search Field, type "Kenney"
 
-![Asset Library, Kenney](assets/godot/qs3d1/assetlibrary_kenney.png)
+![Asset Library, Kenney](../quick_start_3d_platformer/assetlibrary_kenney.png)
 
 * Click "Starter Kit 3D Platformer"
 * Press Download
 
-![Install Project: Starter Kit 3D Platformer](assets/godot/qs3d1/install.png)
+![Install Project: Starter Kit 3D Platformer](../quick_start_3d_platformer/install.png)
 
 * _Optional:_ Change "Project Path" to where you would like your Godot projects to be stored
 * _Optional:_ Change "Project Name" to something else
@@ -55,17 +55,17 @@ In this guide, however, we will use a specific, _and awesome_ template available
 
 You may get a warning like this. That's fine. Just click OK.
 
-![Godot Version Warning](assets/godot/warning42.png)
+![Godot Version Warning](../../assets/godot/warning42.png)
 
 After a short while, the Godot Editor appears and it should look something like this:
 
-![Main Scene](assets/godot/qs3d1/main.png)
+![Main Scene](../quick_start_3d_platformer/main.png)
 
 # Try it out
 
 * Press F5 or click the Run project button to try out "your" new shiny 3D platformer game.
 
-![Run Project](assets/godot/runproject.png)
+![Run Project](../../assets/godot/runproject.png)
 
 The game controls are:
 
@@ -109,15 +109,15 @@ Next, let's try to move that coin next to the player up a bit so we have to jump
 
 * Click the coin to select it
 
-![Click coin](assets/godot/qs3d1/click_coin.png)
+![Click coin](../quick_start_3d_platformer/click_coin.png)
 
 When selected it should look like this:
 
-![Coin selected](assets/godot/qs3d1/coin_selected.png)
+![Coin selected](../quick_start_3d_platformer/coin_selected.png)
 
 *If nothing happens, you may have accidentally pressed W without the right mouse button clicked, and changed to Move Mode. Click Q or the selection arrow to get back to Selection Mode, and try again.*
 
-![Move mode](assets/godot/move_mode.png)
+![Move mode](../../assets/godot/move_mode.png)
 
 * Press F to Focus on the coin
 * Click and drag the *green* arrow to move the coin upwards.
@@ -137,7 +137,7 @@ The new coin will appear exactly on top of the original coin, so until we move i
 
 Something like this:
 
-![Two Coins Selected](assets/godot/qs3d1/two_coins_selected.png)
+![Two Coins Selected](../quick_start_3d_platformer/two_coins_selected.png)
 
 * Try your glorious change
 
@@ -159,4 +159,4 @@ For variation, you'll probably want to rotate some of the platforms and clouds.
 
 The last thing you can do with selection manipulator (or "Gizmo" as it's sometimes called) is to drag one of the three squares. This moves the node in the two directions orthogonal to the axis of the same color. This is slightly faster than moving along the two axes one by one.
 
-For more ideas and tips head on over to [Part 2](godot_quick_start_3d_2.md)...
+For more ideas and tips head on over to [Part 2](../../assets/godot/qs3d2/godot_quick_start_3d_2.md)...
