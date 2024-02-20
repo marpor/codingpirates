@@ -1,5 +1,7 @@
 ## Duplicate levels
 
+> Created with Godot 4.2
+
 If you want another level, you can base it off an existing one like this:
 
 * Open the scene for the level you want to duplicate

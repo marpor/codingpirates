@@ -1,5 +1,7 @@
 # Godot Quick Start - 3D Platformer
 
+> Created with Godot 4.2
+
 In this short guide you'll get started with Godot 4.2 _quickly_, using the 3D Platformer Starter Kit by Kenney.
 
 # Godot?

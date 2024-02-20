@@ -1,5 +1,7 @@
 # Moving platforms
 
+> Created with Godot 4.2
+
 In this mini-guide we will make platforms move smoothly from side to side in a [_sinusoidal_](https://en.wikipedia.org/wiki/Sine_wave) motion.
 
 <video controls src="./moving_platforms/example.mp4" title="Title"></video>

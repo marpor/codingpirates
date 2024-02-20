@@ -1,5 +1,7 @@
 # Godot Quick Start - 3D Platformer - Part 2
 
+> Created with Godot 4.2
+
 This guide picks up where Part 1 left off, so if you haven't already completed Part 1, now's the time to do that.
 
 # Tips
