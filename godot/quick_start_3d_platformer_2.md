@@ -10,7 +10,7 @@ This guide picks up where Part 1 left off, so if you haven't already completed P
 
 # Ideas
 
-[Duplicate Levels](./duplicate_levels.md)
+* [Duplicate Levels](./duplicate_levels.md)
 
 ## 2 or more players that move together
 
@@ -30,6 +30,12 @@ Here's an example:
 Bonus idea:
 
 * Take a look at player.gd and see if you can figure out how these properties show up here (hint: look for `@export`)
+
+## Mini-guides
+
+* [Flags as Portals](flag_portals.md)
+
+* [Moving Platforms](moving_platforms.md)
 
 
 ## Custom platforms ("modelled" in Godot)
