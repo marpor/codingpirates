@@ -55,9 +55,9 @@ Look at `player.gd`, and see if you can figure out how to make the player automa
 
 Here's an example. Let's call it a 2½D runner or platformer:
 
-<video controls src="quick_start_3d_platformer_2/3d_platformer_2d.mp4" title="2.5D Runner"></video>
+<video controls src="3d_platformer_2d.mp4" title="2.5D Runner"></video>
 
 Here's a variation that's also often seen in mobile games:
 
-<video controls src="quick_start_3d_platformer_2/3d_platformer_runner.mp4" title="Title"></video>
+<video controls src="3d_platformer_runner.mp4" title="Title"></video>
 
