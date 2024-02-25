@@ -1,16 +1,23 @@
-remote_theme: pages-themes/hacker@v0.2.0
+# Settings
+exclude:
+  [
+    ".github",
+    "Gemfile",
+    "Gemfile.lock",
+    "build.sh",
+    "build-and-serve.sh",
+    "build-and-watch.sh",
+    "README.md",
+  ]
+permalink: pretty
+
+#remote_theme: pages-themes/hacker@v0.2.0
+#theme: hacker
 plugins:
-  - jekyll-remote-theme
+#  - jekyll-remote-theme
   - jekyll-relative-links
+  - jekyll-redirect-from
+
 relative_links:
   enabled: true
   collections: true
-include:
-  - CONTRIBUTING.md
-  - README.md
-  - LICENSE.md
-  - COPYING.md
-  - CODE_OF_CONDUCT.md
-  - CONTRIBUTING.md
-  - ISSUE_TEMPLATE.md
-  - PULL_REQUEST_TEMPLATE.md

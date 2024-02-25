@@ -1,0 +1,85 @@
+---
+---
+
+$backgroundColor: #000000;
+$bodyColor: #ffffff;
+$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+
+:root {
+    --code-background-color: #1d2229;
+}
+
+a {
+    color: #63c259;
+}
+a:visited {
+    color: #46883f;
+}
+
+body {
+    background: $backgroundColor;
+    color: $bodyColor;
+    font-family: $bodyFont;
+}
+
+code:not(pre code) {
+    background: var(--code-background-color);
+    padding: 1px 4px;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+pre {
+    background: var(--codeblock-background-color);
+    color: var(--codeblock-color);
+}
+
+pre code {
+    background: var(--code-background-color);
+    display: block;
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* GDScript code colors adapted from the default theme in Godot 4.2. */
+code {
+    font-family: "Source Code Pro", monospace;
+    font-size: 11pt;
+    font-weight: 400;
+    line-height: 1.75;
+
+    .err {
+        color: red;
+    }
+    /* .err is matching @ which is an export keyword */
+    .k, .keyword, .ow {
+        color: #ff7085;
+    }
+    /* keyword with @ in front = annotation */
+    .annotation, .err, .err + .k, .err + .n {
+        color: #ffb373;
+    }
+    .function, .nf {
+        color: #66e6ff;
+    }
+    .comment, .c1 {
+/*        color: #cdcfd2;*/
+        color: #63c259; /* default grey is really too subtle */
+        font-weight: bold;
+    }
+    .string {
+        color: #ffeda1;
+    }
+    .number, .mf, .mi {
+        color: #a1fff0;
+    }
+    .nb {
+        color: #a3a3f5;
+    }
+    .parens, .p {
+        color: #66e6ff;
+    }
+}
