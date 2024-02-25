@@ -1,7 +1,9 @@
+---
+title: Home
+---
 Welcome!
 
 This page holds a collection of materials that I use in my [Coding Pirates](https://codingpirates.dk/) workshops, but anyone is welcome to use them according to the [CC-BY-SA license](https://creativecommons.org/licenses/by-sa/4.0/). _Linked materials (marked with 🔗) have their own licenses._
-
 
 # Godot
 

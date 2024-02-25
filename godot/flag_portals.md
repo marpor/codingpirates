@@ -1,6 +1,11 @@
-## Flags transport to other scene (aka "Portals")
+---
+title: Portals
+---
+# {{ page.title }}
 
 > Created with Godot 4.2
+
+Let's see if we can make the flags load another scene, af if the flag is a "portal" that transports the player to the other scene.
 
 First we need a scene and script for the flag node.
 
@@ -14,9 +19,12 @@ First we need a scene and script for the flag node.
 
 _This is necessary because we don't actually have a scene for flag yet. It's used directly from the Blender asset._
 
-* Add an `Area3D` and a `CollisionShape3D` nodes
+* Add an `Area3D` child node
+* Add a `CollisionShape3D` node under the `Area3D`
 
 ![Add ChildNode](flag_portals/add_child_node.png)
+
+It should look like this:
 
 ![Child Nodes](flag_portals/child_nodes.png)
 

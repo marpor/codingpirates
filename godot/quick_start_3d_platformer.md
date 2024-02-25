@@ -1,8 +1,17 @@
-# Godot Quick Start - 3D Platformer
+---
+title: Godot Quick Start - 3D Platformer
+---
+# {{ page.title }}
 
 > Created with Godot 4.2
 
 In this short guide you'll get started with Godot 4.2 _quickly_, using the 3D Platformer Starter Kit by Kenney.
+
+It will look something like this:
+
+<video muted controls width="100%"><source src="3d_platformer_main.mp4" type="video/mp4"></video>
+
+But if you follow along, we'll make it _even_ cooler.
 
 # Godot?
 
@@ -38,7 +47,7 @@ In the Future, you can create new projects and open existing projects from here.
 
 # Start with a Template
 
-In this guide, however, we will use a specific, _and awesome_ template available in the Asset Library.
+In this guide, however, we will use an _awesome_ template from the Asset Library, made by [KenneyNL](https://kenney.nl/starter-kits).
 
 * Click on the the *Asset Library Projects* tab
 * In the Search Field, type "Kenney"
