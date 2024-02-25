@@ -7,7 +7,7 @@ This page holds a collection of materials that I use in my [Coding Pirates](http
 
 # Godot
 
-* [Godot _Quick_ Start - 3D Platformer](godot/quick_start_3d_platformer.md)  
+* [Godot _Quick_ Start - 3D Platformer](godot/quick_start_3d_platformer/index.md)  
   We dive right in to the nice 3D Platformer Starter Kit (made by [KenneyNL](https://github.com/KenneyNL/Starter-Kit-3D-Platformer)🔗), and get familiar with the 3D editor. Then we start making some changes to the game.  
   * [Part 2](godot/quick_start_3d_platformer_2.md)
   * [Duplicate Levels](godot/duplicate_levels.md)
