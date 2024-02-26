@@ -5,13 +5,23 @@ title: Godot Quick Start - 3D Platformer - Part 2
 
 > Created with Godot 4.2
 
-This guide picks up where Part 1 left off, so if you haven't already completed Part 1, now's the time to do that.
+This guide picks up where [Part 1](quick_start_3d_platformer/index.md) left off.
 
 # Tips
 
-* Multi-select (with shift)
-* Edit multiple
-* Change X/Y/Z for multiple selected nodes
+## Multi-Select
+
+* Hold ```Shift``` while clicking nodes in the viewport to select multiple
+* When you move or rotate, all of the selected object (nodes) will move or rotate together
+
+On the right hand side, you have the ```Inspector```, which allows you to enter specific positions and rotations **for all of the selected nodes** at once.
+
+![Inspector](quick_start_3d_platformer_2/inspector_multiple.png)
+
+* Set the Y value to 0.0 (while you have multiple selected nodes)
+* Press ```Ctrl+Z``` if you want to undo that change
+
+```Shift+Click``` also works for selecting multiple objects in the _Scene Tree_, but note that here it selects *all of* the nodes between the first and second click. To select individual nodes one-by-one use ```Ctrl+Click``` click instead (```Cmd+Click``` on Mac).
 
 # Mini-guides
 
