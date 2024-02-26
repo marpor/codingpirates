@@ -1,6 +1,7 @@
 ---
+title: Duplicate Levels
 ---
-## Duplicate levels
+# {{ page.title }}
 
 > Created with Godot 4.2
 

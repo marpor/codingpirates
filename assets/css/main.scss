@@ -30,7 +30,8 @@ body {
 
 h1 {
     padding-bottom: 0.3em;
-    margin: 24px 0 16px 0;
+    margin: 1.5em 0 1em 0;
+    font-weight: 300;
 /*    border-bottom: 1px solid var(--primary3);*/
 }
 
@@ -42,6 +43,17 @@ h1::after {
     background-image: url('/assets/hr.png');
     background-size: 100% 4px;
     margin: 0 -1em;
+}
+
+main > h1:first-of-type {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 200;
+    margin: 1em 0;
+}
+
+main > h1:first-of-type::after {
+    background-image: none;
 }
 
 p {
@@ -64,18 +76,25 @@ ul a:visited {
     color: var(--secondary);
 }
 
-section > ul {
+main {
+    padding: 1em;
+    background-color: #0d1117;
+    border-top: 1px solid #ffffff20;
+    border-bottom: 1px solid #ffffff20;
+}
+
+main > ul {
     margin: 2em 0;
 }
-section > ul > li {
+main > ul > li {
     margin: .5em;
 }
 
-section li {
+main li {
 /*    list-style: "➡️";*/
 }
 
-section li::marker {
+main li::marker {
     color: var(--primary);
 }
 
@@ -108,13 +127,6 @@ footer {
 
 hr {
     margin: 2em 0;
-}
-
-#content {
-    padding: 1em;
-    background-color: #0d1117;
-    border-top: 1px solid #ffffff20;
-    border-bottom: 1px solid #ffffff20;
 }
 
 code:not(pre code) {
