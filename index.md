@@ -20,8 +20,8 @@ This page holds a collection of materials that I use in my [Coding Pirates](http
 
 Templates / Demo Projects
 
-* https://github.com/marpor/PixelAdventure (Godot 3 - 2D)
-* https://github.com/marpor/wiggle-ball (Godot 4 - 3D)
+* [github.com/marpor/PixelAdventure](https://github.com/marpor/PixelAdventure) (Godot 3 - 2D)
+* [github.com/marpor/wiggle-ball](https://github.com/marpor/wiggle-ball) (Godot 4 - 3D)
 
 # Unity
 
@@ -34,7 +34,7 @@ Tutorials
 
 Templates / Demo Projects
 
-* https://github.com/marpor/BallsAndLights2_Unity (Unity - 3D)
+* [github.com/marpor/BallsAndLights2_Unity](https://github.com/marpor/BallsAndLights2_Unity) (Unity - 3D)
 
 # JavaScript/CSS/HTML
 
@@ -45,4 +45,4 @@ Templates / Demo Projects
 
 Enjoy!
 
-/Mark
+/Marken

@@ -4,16 +4,87 @@
 $backgroundColor: #000000;
 $bodyColor: #ffffff;
 $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+/*           -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"*/
 
 :root {
     --code-background-color: #1d2229;
+    --secondary: #63c259;
+    --secondary-dimmed: #46883f;
+    --primary: #2fa7f7;
+    --primary2: #2766bd;
+    --primary3: #16345e;
+    --primary0: #cceaff;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: $backgroundColor;
+    color: $bodyColor;
+    font-family: $bodyFont;
+    background-image: url("/assets/m-logo1.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 112px 112px;
+}
+
+h1 {
+    padding-bottom: 0.3em;
+    margin: 24px 0 16px 0;
+/*    border-bottom: 1px solid var(--primary3);*/
+}
+
+h1::after {
+    content: "";
+    display: block;
+    border: 0px;
+    height: 4px;
+    background-image: url('/assets/hr.png');
+    background-size: 100% 4px;
+    margin: 0 -1em;
+}
+
+p {
+    margin: 1em 0;
 }
 
 a {
-    color: #63c259;
+    color: var(--primary);
+    text-decoration: none;
+    font-style: normal;
+}
+a:hover {
+    text-decoration: underline;
 }
 a:visited {
-    color: #46883f;
+    color: var(--primary);
+}
+
+ul a:visited {
+    color: var(--secondary);
+}
+
+section > ul {
+    margin: 2em 0;
+}
+section > ul > li {
+    margin: .5em;
+}
+
+section li {
+/*    list-style: "➡️";*/
+}
+
+section li::marker {
+    color: var(--primary);
+}
+
+hr {
+    display: block;
+    border: 0px;
+    height: 4px;
+    background-image: url('/assets/hr.png');
+    background-size: 100% 4px;
 }
 
 p img {
@@ -24,10 +95,26 @@ video {
     max-width: 100%
 }
 
-body {
-    background: $backgroundColor;
-    color: $bodyColor;
-    font-family: $bodyFont;
+header {
+    color: var(--secondary);
+    padding: 2em 1em;
+    padding-left: 100px;
+}
+
+footer {
+    color: var(--secondary);
+    padding: 2em 1em;
+}
+
+hr {
+    margin: 2em 0;
+}
+
+#content {
+    padding: 1em;
+    background-color: #0d1117;
+    border-top: 1px solid #ffffff20;
+    border-bottom: 1px solid #ffffff20;
 }
 
 code:not(pre code) {

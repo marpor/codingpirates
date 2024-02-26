@@ -13,56 +13,38 @@ It will look something like this:
 
 But if you follow along, we'll make it _even_ cooler.
 
-# Godot?
+# Requirements
 
-If this is your first Godot Tutorial, you may want to:
+You don't need to have tried Godot or any other game engine before.
 
-* Read [Introduction to Godot](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html)
+*It's an advantage to have tried text based programming before (like Python or JavaScript) to better understand the code examples, but it's also OK to start out just copy-pasting the examples.*
 
-# Download and "Install" Godot
+If this is your first experience with Godot, you may want check out these links first:
 
-* Go to www.godotengine.org
-* Click the "Download Latest" button
+* _Optional:_ Read [Introduction to Godot](https://docs.godotengine.org/en/stable/getting_started/introduction/introduction_to_godot.html) 🔗
 
-![Download Latest](../assets/download_latest.png)
+When you feel you are ready, continue to:
 
-* Once downloaded, Open the file
-* Drag the file _without_ "console" in the name to your Desktop (or another place where you can easily find it again)
+ * [Download & "Install" Godot](../install.md)
 
-![Unpack Windows](../assets/unpack_windows.png)
+# Starter Kit 3D Platformer
 
-It may look slightly different depending on your version of Windows, or on Mac, but it's still pretty similar.
-
-* *Double-Click* on the file you just unpacked to start Godot
-
-# The Project Manager
-
-The first thing you see in Godot is the Project Manager:
-
-![Project Manager](../assets/projectmanager.png)
-
-If you've used Godot before, it will list your previous projects here.
-
-In the Future, you can create new projects and open existing projects from here.
-
-# Start with a Template
-
-In this guide, however, we will use an _awesome_ template from the Asset Library, made by [KenneyNL](https://kenney.nl/starter-kits).
+In this guide, we will use an awesome template from the Asset Library, made by [KenneyNL](https://kenney.nl/starter-kits) 🔗.
 
 * Click on the the *Asset Library Projects* tab
 * In the Search Field, type "Kenney"
 
 ![Asset Library, Kenney](assetlibrary_kenney.png)
 
-* Click "Starter Kit 3D Platformer"
-* Press Download
+* Click ```Starter Kit 3D Platformer```
+* Press ```Download```
 
 ![Install Project: Starter Kit 3D Platformer](install.png)
 
-* _Optional:_ Change "Project Path" to where you would like your Godot projects to be stored
-* _Optional:_ Change "Project Name" to something else
-* Press Create Folder
-* Press Install & Edit
+* _Optional:_ Change ```Project Path``` to where you would like your Godot projects to be stored
+* _Optional:_ Change ```Project Name``` to something else
+* Press ```Create Folder```
+* Press ```Install & Edit```
 
 You may get a warning like this. That's fine. Just click OK.
 
@@ -74,15 +56,15 @@ After a short while, the Godot Editor appears and it should look something like 
 
 # Try it out
 
-* Press F5 or click the Run project button to try out "your" new shiny 3D platformer game.
+* Press ```F5``` or click the ```Run project``` button to try out "your" new shiny 3D platformer game.
 
 ![Run Project](../assets/runproject.png)
 
 The game controls are:
 
-* Move: W, A, S, D keys
-* Jump and double-jump: Spacebar
-* Quit: F8 (or one of the platform specific ways to close an application like Alt+F4, Cmd+Q etc.)
+* Move: ```W```, ```A```, ```S```, ```D``` keys
+* Jump and double-jump: ```Spacebar```
+* Quit: ```F8``` (or one of the platform specific ways to close an application like ```Alt+F4```, ```Cmd+Q``` etc.)
 
 That was pretty awesome, right? Many thanks to Kenney for that!
 
@@ -90,29 +72,23 @@ Now, let's try and see if we can figure out what's going on here...
 
 # The Godot Editor
 
-If this is your first experience with Godot, now is a good time to:
+If this is your first Godot experience, you may want to familiarize yourself with some of the key concepts here:
 
-* Read [Overview of Godot's key concepts](https://docs.godotengine.org/en/stable/getting_started/introduction/key_concepts_overview.html)
-* Read [First look at Godot's editor](https://docs.godotengine.org/en/stable/getting_started/introduction/first_look_at_the_editor.html#id1)
-
-# What's included anyway?
-
-This is a pretty full featured game already, as evidenced by the stuff already in *FileSystem* and the already loaded scene "main".
-
-This guide, however, is about as hands on as they come, so let's not get distracted by all of this just yet. Let's try and **change some stuff**.
+* _Optional:_ Read [Overview of Godot's key concepts](https://docs.godotengine.org/en/stable/getting_started/introduction/key_concepts_overview.html) 🔗
+* _Optional:_ Read [First look at Godot's editor](https://docs.godotengine.org/en/stable/getting_started/introduction/first_look_at_the_editor.html) 🔗
 
 # Looking around in 3D
 
 While the controls in the game are pretty typical, navigating the 3D view is a little more complex, so to get you started here's a few tips:
 
-* _*Hold down the right mouse button*_ to navigate like a typical game:
-  * Move the mouse to look around
-  * Use keys W, A, S, D to move around
+* ***Hold down the right mouse button*** to navigate like a typical game:
+  * ```Move``` the mouse to look around
+  * Use keys ```W```, ```A```, ```S```, ```D``` to move around
   * Scroll wheel to increase/decrease movement speed (or hold shift to speed up temporarily)
-* Hold middle mouse button and move mouse to rotate the view
-* Shift + middle mouse button to pan the view
-* Mouse wheel to zoom in/out
-* F key to focus selection (try this if you get lost!)
+* Hold ```middle mouse``` button and move mouse to rotate the view
+* ```Shift``` + ```middle mouse``` button to pan the view
+* ```Mouse wheel``` to zoom in/out
+* ```F``` key to focus selection (try this if you get lost!)
 
 # Moving things
 
@@ -130,17 +106,18 @@ When selected it should look like this:
 
 ![Move mode](../assets/move_mode.png)
 
-* Press F to Focus on the coin
-* Click and drag the *green* arrow to move the coin upwards.
-  *If you hold down Ctrl, the movement will snap to whole units. The character can jump around 1 unit, and double-jump around 2 units.*
-* Press F5 to try your change
+* Press ```F``` to Focus on the coin
+* Click and drag the *green* arrow to move the coin upwards.  
+  *If you hold down Ctrl, the movement will snap to whole units.  
+  The character can jump around 1 unit, and double-jump around 2 units.*
+* Press ```F5``` to try your change
 
 Ok, that was fun... ish.. how about adding some more coins?
 
 # Duplicating stuff
 
 * Select the coin again
-* Press Ctrl+D (or Cmd+D on Mac) to Duplicate the coin
+* Press ```Ctrl+D``` (or ```Cmd+D``` on Mac) to Duplicate the coin
 
 The new coin will appear exactly on top of the original coin, so until we move it we can't really see it (except in the Scene tree).
 
