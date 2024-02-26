@@ -21,7 +21,7 @@ This guide picks up where Part 1 left off, so if you haven't already completed P
 
 * [Moving Platforms](moving_platforms.md)
 
-* [Environment](environment.md)
+* [Environment](environment/index.md)
 
 # Ideas
 
