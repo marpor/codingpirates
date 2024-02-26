@@ -6,18 +6,18 @@ You may have noticed the ![icon](https://raw.githubusercontent.com/godotengine/g
 
 * Select the `Environment` node
 
-![Enviroment Node](node.png)
+![Enviroment Node](res/environment/node.png)
 
  * In the Inspector, click the `Environment` value
 
-![Environment Value](value.png)
+![Environment Value](res/environment/value.png)
 
 Now, unless you want to make your Environment changes apply to **all** your scenes, make sure it's "unlinked" first.
 
 * Click the little down-arrow 
 * Click `Make Unique`
 
-![Make Unique](unique.png)
+![Make Unique](res/environment/unique.png)
 
 * Change `Background`, `Mode` to `Custom Color`.
 * Change `Background`, `Color` to _black_.
@@ -26,13 +26,13 @@ Now, unless you want to make your Environment changes apply to **all** your scen
 
 It should look something like this:
 
-![Dark Environment 1](dark1.png)
+![Dark Environment 1](res/environment/dark1.png)
 
 All of the light that we have now is from the `Sun` directional light node.
 
 * Click the "Eye" icon next to the `Sun` node in the Scene tree
 
-![The Sun Node](sun.png)
+![The Sun Node](res/environment/sun.png)
 
 * Try your changes
 
@@ -43,7 +43,7 @@ Well, at night we don't really have any light from the sun, so let's try and bri
 * Select the `Player` node in the Scene tree
 * Press the Add Child Node button
 
-![Add OmniLight3D](omnilight3d.png)
+![Add OmniLight3D](res/environment/omnilight3d.png)
 
 * Find `OmniLight3D`
 * Press `Create`
@@ -52,7 +52,7 @@ The new light will be placed at the origin of the player. That looks a little wi
 
 * Move the light so it's in front, and slightly above the Player
 
-![OmniLight3D positioning](omni-position.png)
+![OmniLight3D positioning](res/environment/omni-position.png)
 
 * Try your changes
 
@@ -67,6 +67,6 @@ Notice how the light moves *with* the player. This is because we added the light
 
 Here's an example how this can look:
 
-![Example](example.png)
+![Example](res/environment/example.png)
 
 While it's tempting to add lights on the coins, be aware that many light may affect performance. Even on Gamer grade hardware!

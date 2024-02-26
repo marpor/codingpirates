@@ -3,24 +3,22 @@ title: Moving platforms
 ---
 # {{ page.title }}
 
-> Created with Godot 4.2
-
 In this mini-guide we will make platforms move smoothly from side to side in a [_sinusoidal_](https://en.wikipedia.org/wiki/Sine_wave) motion.
 
-<video controls src="moving_platforms/example.mp4" title="Title"></video>
+<p><video muted controls><source src="example.mp4" type="video/mp4"></video></p>
 
- *We're building on the work in [Godot Quick Start - 3D Platformer](./quick_start_3d_platformer), but the instructions and script should work for similar types of 3D scenes in **Godot 4**.*
+ *We're building on the work in [Godot Quick Start - 3D Platformer](index.md), but the instructions and script should work for similar types of 3D scenes in **Godot 4**.*
 
 * Select the platform you want to make moving
 * Click the Attach Script button
 
-![Attach Script](moving_platforms/attach_script.png)
+![Attach Script](res/moving_platforms/attach_script.png)
 
 * Update the name of the script (in Path)
   * For example `scripts/moving_platform.gd`
 * Press Create
 
-![Name moving_platform.gd](moving_platforms/script_name.png)
+![Name moving_platform.gd](res/moving_platforms/script_name.png)
 
 * Replace the new script with this code:
 
@@ -46,7 +44,7 @@ func _process(delta):
 * Try your changes. The platform with the script should have started moving.
 * You can adjust the distance, speed etc. with the properties we added with the `@export` vars in the script.
 
-![Moving Platform Properties](moving_platforms/properties.png)
+![Moving Platform Properties](res/moving_platforms/properties.png)
 
 Now, there is just one problem. **The player doesn't move with the platform!!** 😢
 
@@ -54,15 +52,15 @@ This is fortunately quite easy to fix: Just change the body type from `StaticBod
 
 * Click the *Open in Editor* icon on the platform
 
-![Open In Editor](moving_platforms/open_in_editor.png)
+![Open In Editor](res/moving_platforms/open_in_editor.png)
 
 * Right click the `StaticBody3D` node
 
-![Change Type](moving_platforms/change_body_type.png)
+![Change Type](res/moving_platforms/change_body_type.png)
 
 * Find the `CharacterBody3D` type
 
-![CharacterBody3D](moving_platforms/characterbody3d.png)
+![CharacterBody3D](res/moving_platforms/characterbody3d.png)
 
 * Press *Change*
 
@@ -72,7 +70,7 @@ To make additional platforms moving, you just need to attach the same script to 
 
 * Drag `moving_platform.gd` from FileSystem onto additional platform nodes.
 
-![Drag moving_platform.gd](moving_platforms/drag_script.png)
+![Drag moving_platform.gd](res/moving_platforms/drag_script.png)
 
 💡 _In the example video above, I've set a different value for the `Time Offset` property on each platform so they move out of sync._
 

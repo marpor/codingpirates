@@ -56,6 +56,29 @@ main > h1:first-of-type::after {
     background-image: none;
 }
 
+/* This matches images and videos that are on their own line with no surrounding text. */
+main p > img:only-child, 
+main p > video:only-child {
+    display: block;
+    margin: 1.5em auto;
+}
+
+// Limit video width (they have a fullscreen button anyway)
+main p > video:only-child {
+    max-width: 600px;
+}
+
+/* This matches the enclosing p for the images and videos with no surrounding text. */
+p:has(> img:only-child),
+p:has(> video:only-child) {
+    background: black;
+    margin: 1em -1em;
+    border: 1px solid #ffffff20;
+    border-right: none;
+    border-left: none;
+    padding: 0 1em;
+}
+
 p {
     margin: 1em 0;
 }
@@ -72,7 +95,8 @@ a:visited {
     color: var(--primary);
 }
 
-ul a:visited {
+ul a:visited,
+ol a:visited {
     color: var(--secondary);
 }
 
@@ -81,12 +105,15 @@ main {
     background-color: #0d1117;
     border-top: 1px solid #ffffff20;
     border-bottom: 1px solid #ffffff20;
+    max-width: 900px;
 }
 
-main > ul {
+main > ul,
+main > ol {
     margin: 2em 0;
 }
-main > ul > li {
+main > ul > li,
+main > ol > li {
     margin: .5em;
 }
 
