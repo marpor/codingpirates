@@ -55,12 +55,36 @@ For now, though, we'll focus our attention on the _3D viewport_.
 
 # Ideas
 
-* [Player Speed & Jump Power](player_speed.md)
-* [More Players](many_players.md)
+* [Player Speed & Jump Power](player_speed.md) - to the moon
+* [More Players](many_players.md) - doppelgängers
 * [Custom Platforms](custom_platforms.md)
 * [Make a "Runner" Game](runner.md)
 
 <!-- 
 F to toggle fullscreen.
 Autoload scene with HUD.
+
+Moving Platforms
+Nattebane
+Dobbeltgænger ()
+Anden tyngdekraft
+Levels med Portaler
+--
+Runner / Slope variant
+--
+x Tip: Auto-hide Output
+x Musik: CC0 fx pixabay
+Krav om at samle alle mønter op før man kan gå videre
+Platform der forsvinder (fake)
+Tre liv + Samle liv (evt. fra mønter)
+Menu - Start (køb skins, kreditkort formular)
+Custom Platforms
+Skilte
+Lava eller lign
+Importere grafikker fra Itch.io o.l
+Monstre (man skal hoppe på?) - grinde ting til monstre, save og andet
+Skin
+Jump Scare (nattebane, så kommer der noget scary frem)
+Kapitalisme. For at hoppe skal man tvinge NPC'er til at lave mønter.
+
 -->

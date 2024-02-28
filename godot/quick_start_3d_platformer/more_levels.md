@@ -12,8 +12,7 @@ If you want another level, you can base it off an existing one like this:
 
 ![Save Scene As](../assets/save_scene_as.png)
 
-
-Now we have a separate 
+Now we have a separate file for our scene, and this is .
 
 * Press F6 to test the currently active scene
 

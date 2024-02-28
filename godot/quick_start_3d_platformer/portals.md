@@ -39,8 +39,6 @@ It should look like this:
 
 ![Flag Add Script](res/portals/flag_add_script.png)
 
-* Update the `Path` to `res://scripts/flag.gd`
-
 * Select the `Area3D` node
 
 * Connect the Area3D `body_entered` signal with the script
@@ -72,7 +70,7 @@ func _on_area_3d_body_entered(body):
 		get_tree().change_scene_to_file(load_scene)
 ```
 
-_Check that you still have the ![connected Signal](../assets/icon_connected_signal.png) icon in front of the `_on_area_3d_body_entered` method. Otherwise, go back and check the signals!_
+> You should still see the ![connected Signal](../assets/icon_connected_signal.png) icon in front of `func _on_area_3d_body_entered` after updating the code. Otherwise, go back and check the signals!
 
 * Save the flag scene by pressing Ctrl+S - you can place it in the `objects` directory
 
@@ -107,12 +105,18 @@ It will get renamed to `flag2` to avoid duplicate names.
 
 * In the inspector, you now have a new property `Load Scene`
 
-* Press the Folder icon to pick another level (or just pick the same scene if you haven't created another level yet)
+* Press the Folder icon and pick the scene for the level you want to go to
 
 ![Load Scene Property](res/portals/load_scene_property.png)
+
+> Now, it's probably a good time to [make more levels](more_levels.md) so this can become a _proper_ game.
 
 * Test your game!
 
 _If you get issues immediately when you start the game, check that you don't have platforms or other objects interfering with your flag's collision cylinder._
 
-Now, it's probably a good time to [make more levels](more_levels.md) so this can become a _proper_ game.
+_Another way to avoid this problem is to set different Collsion Masks_
+
+If you want to have the player fall down on loading of the target scene:
+
+* Optional: Move *both* the Player and View nodes up in the target scene. Use [multi-select](multi_select.md) to move both at once.

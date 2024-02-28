@@ -5,7 +5,7 @@ title: Moving platforms
 
 In this mini-guide we will make platforms move smoothly from side to side in a [_sinusoidal_](https://en.wikipedia.org/wiki/Sine_wave) motion.
 
-<p><video muted controls><source src="example.mp4" type="video/mp4"></video></p>
+<p><video muted controls><source src="res/moving_platforms/example.mp4" type="video/mp4"></video></p>
 
  *We're building on the work in [Godot Quick Start - 3D Platformer](index.md), but the instructions and script should work for similar types of 3D scenes in **Godot 4**.*
 
