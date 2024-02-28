@@ -51,6 +51,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Portals](portals.md)
 * [Moving Platforms](moving_platforms.md)
 * [Environment](environment.md)
+* [Make a Sign](sign.md)
 
 # Ideas
 
