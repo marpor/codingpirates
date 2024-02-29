@@ -10,5 +10,5 @@ title: More Players
 
 Here's an example:
 
-![Two Player Level Example](res/two_player_level_example.png)
+![Two Player Level Example](res/many_players/level_example.png)
 
