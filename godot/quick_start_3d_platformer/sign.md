@@ -5,7 +5,7 @@ title: Make a Sign
 
 In this mini-guide, we'll make a little sign that you can place in your world, with any text on it!
 
-![Example](res/sign_example.png)
+![Example](res/sign/example.png)
 
 * [Create a new Scene](../tips/create_a_scene.md) and [add the following nodes](../tips/add_nodes.md) (name: `Type`)
    * Sign: `StaticBody3D`
@@ -15,7 +15,7 @@ In this mini-guide, we'll make a little sign that you can place in your world, w
          * Text: `Label3D`
 
 Like this:
-![Sign WIP 0](res/sign_wip2.png)
+![Sign WIP 0](res/sign/wip2.png)
 
 * Save your new scene in the `objects` directory.  
 _It should automatically get called `sign.tscn` if you named your root node "Sign" as shown above._
@@ -23,7 +23,7 @@ _It should automatically get called `sign.tscn` if you named your root node "Sig
 * Select `Stick`
 * Set the `Mesh` property to `New CylinderMesh`
 
-![New CylinderMesh](res/sign_new_cylindermesh.png)
+![New CylinderMesh](res/sign/new_cylindermesh.png)
 
 * Click the new cylinder mesh to edit it
 * Set both `Top Radius` and `Bottom Radius` to `0.02 m`
@@ -48,7 +48,7 @@ Now, let's create the Plate in a similar way:
 
 Your scene tree and scene should now look something like this:
 
-![Sign WIP 1](res/sign_wip1.png)
+![Sign WIP 1](res/sign/wip1.png)
 
 Notice that our CollisionShape3D has a warning icon next to it. We'll fix that now.
 
@@ -56,7 +56,7 @@ Notice that our CollisionShape3D has a warning icon next to it. We'll fix that n
 * Set the `Shape` property to `New BoxShape3D`
 * Use the size manipulators to make the box roughly the size of the sign
 
-![Sign WIP 2](res/sign_wip2.png)
+![Sign WIP 2](res/sign/wip2.png)
 
 Ok, and now - finally - let's set the text:
 
@@ -71,7 +71,7 @@ Ok, and now - finally - let's set the text:
 
 It can now look something like this:
 
-![Sign WIP 3](res/sign_wip3.png)
+![Sign WIP 3](res/sign/wip3.png)
 
 * Save the scene again
 
@@ -79,7 +79,7 @@ It can now look something like this:
 * _Instance_ the sign by _dragging_ `sign.tscn` from the `FileManager` onto the desired position in the scene
 * Adjust the position and rotation of the as you please
 
-![Sign WIP 4](res/sign_wip4.png)
+![Sign WIP 4](res/sign/wip4.png)
 
 Now we just need to tweak the text.
 
