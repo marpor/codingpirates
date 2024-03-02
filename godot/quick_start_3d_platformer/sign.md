@@ -41,7 +41,8 @@ Now, let's change the color of our stick:
 Now, let's create the Plate in a similar way:
 
 * Select `Plate`
-* Set the `Mesh` property to `New CylinderMesh`
+* Set the `Mesh` property to `New BoxMesh`
+* Edit the new mesh
 * Set the `Size` property `x`, `y`, `z` to `0.8`, `0.4`, `0.02`
 * Move Plate so it sits in a good position relative to the Stick
 
@@ -66,7 +67,7 @@ Ok, and now - finally - let's set the text:
 
 * Adjust the other text settings like colors (`Modulate`) and `Font` as you desire
 
-Note that you can get a crisper text by making the text `Font Size` much larger, and then scaling down the node with `Transform/Scale` or by using the scale tool.
+> Note that you can get a crisper text by making the text `Font Size` much larger, and then scaling down the node with `Transform/Scale` or by using the scale tool.
 
 It can now look something like this:
 
@@ -86,7 +87,7 @@ Now we just need to tweak the text.
 * Enable `Editable Children``
 * Select the `Text` sub-node, and adjust the `Text` property
 
-> The yellow coloring here is meant as a warning that any changes here may be lost if the source scene is changed. If you are careful to not rename any of the nodes leading up to the Text node, you should be fine.
+> _The yellow coloring here is meant as a warning that any changes here may be lost if the source scene is changed too much. In particular changing node names can prevent Godot from finding out which editable children were change._
 
 Now, go _sign_ your levels! 😉
 
