@@ -26,25 +26,28 @@ I denne Tutorial bruger jeg version 2022.2. Der kan være forskelle hvis du brug
 * Start Unity Hub  
 ![Unity Hub](res/225712399.png)
 
-* Vælg New Project  
+* Vælg New Project
+
 ![New Project](res/225712306.png)
 
-* _Hvis du har flere versioner af Unity Editoren installeret, så sørg for at vælge den du vil bruge fra listen i toppen:_  
+* _Hvis du har flere versioner af Unity Editoren installeret, så sørg for at vælge den du vil bruge fra listen i toppen:_
+
 ![Editor Version](res/225758059.png)
 
-* Vælg Core og 3D  
+* Vælg Core og 3D
+
 ![Core/3D](res/225713378.png)
 
 * Under Project Settings, find på et godt navn til dit projekt, jeg har kaldt mit Balls2022.
-* Under Location kan du trykke på mappe ikonet
-![Folder](res/225714200.png)
-og vælge et sted på din harddisk du kan finde igen.  
+* Under Location kan du trykke på mappe ikonet ![Folder](res/225714200.png) og vælge et sted på din harddisk du kan finde igen.
+
 ![Project Settings](res/225758416.png)
 
-* Tryk Create Project  
+* Tryk **Create Project**  
 ![Create Project](res/225716061.png)
 
-* Vent, mens Unity gør dit projekt klar. Det tager lidt tid...  
+* Vent, mens Unity gør dit projekt klar. Det tager lidt tid...
+
 ![Busy](res/225758872.png)
 
 Du skulle nu gerne være i Unity's hoved vindue, og du er klar til at gå igang med Trin 1.
@@ -52,30 +55,34 @@ Du skulle nu gerne være i Unity's hoved vindue, og du er klar til at gå igang 
 # Trin 1 - Byg en scene
 
 * Tilføj en Sphere (kugle)
-* Tryk på 
-![plus](res/225720461.png)
-ikonet under Hierarchy.  
+* Tryk på ![plus](res/225720461.png) ikonet under Hierarchy.
+
 ![image](res/225720379.png)
 
 * Vælg 3D Object, Sphere.
 
-Din nye Sphere kan nu ses både i *Hierarchy*, visuelt under *Scene*, og du kan se dens forskellige indstillinger under *Inspector* i højre side af Unity  
+Din nye Sphere kan nu ses både i *Hierarchy*, visuelt under *Scene*, og du kan se dens forskellige indstillinger under *Inspector* i højre side af Unity
+
 ![Editor](res/226473780.png)
 
-* Under Transform, sørg for at Position X, Y og Z står til ca. 0, 2 og 0 som her:  
+* Under Transform, sørg for at Position X, Y og Z står til ca. 0, 2 og 0 som her:
+
 ![Transform Position](res/226210975.png)
 
-Du kan enten taste tallene ind, eller du kan hive i de farvede pile der vises:  
+Du kan enten taste tallene ind, eller du kan hive i de farvede pile der vises:
+
 ![Sphere Manipulatorer](res/226211069.png)
 
 TIP: Hvis du holder Ctrl nede mens du trækker i pilene, vil de "snappe" til "pæne" tal.
 
 * Tilføj et Plane, som du før tilføjede en Sphere (dvs. tryk plus under Hierarchy, vælg 3D Object, Plane.)
 * Sæt Position X, Y og Z til 0, -2 og 0
-* Klik på "Main Camera" i Hierarchy. Du får herved et preview der gerne skulle se ud som dette:  
+* Klik på "Main Camera" i Hierarchy. Du får herved et preview der gerne skulle se ud som dette:
+
 ![Main Camera Preview](res/226211310.png)
 
-* Prøv at trykke Play ![Play](res/226211356.png), øverst i Unity vinduet:  
+* Prøv at trykke Play ![Play](res/226211356.png), øverst i Unity vinduet:
+
 ![Play Pause Menu](res/226211343.png)
 
 Du skulle gerne det samme som i preview for Main Camera, blot større!
@@ -90,13 +97,16 @@ Vores scene er lidt kedelig når der ikke sker noget, så lad os prøve at få k
 
 * Vælg din Sphere under Hierarchy
 
-* Vælg **Add Component** i bunden af Inspector  
+* Vælg **Add Component** i bunden af Inspector
+
 ![Add Component](res/226211623.png)
 
-* Vælg Rigidbody. Du kan evt begynde at taste navnet "Rigidbody" ind for at finde den hurtigere.  
+* Vælg Rigidbody. Du kan evt begynde at taste navnet "Rigidbody" ind for at finde den hurtigere.
+
 ![Rigidbody](res/226211656.png)
 
-* Tryk Play igen, og se hvordan din Sphere falder ned på Plane med et brag... Nej, ok braget må du tænke dig til, indtil der bliver tilføjet lydeffekter 😁   
+* Tryk Play igen, og se hvordan din Sphere falder ned på Plane med et brag... Nej, ok braget må du tænke dig til, indtil der bliver tilføjet lydeffekter 😁 
+
 ![Sphere på Plane](res/226211785.png)
 
 * Tryk Play igen for at stoppe afspilning.
@@ -112,7 +122,6 @@ Ok, det er stadig lidt kedeligt. Lad os tilføje nogle flere Spheres.
 
 <p><video muted controls><source src="res/wip1.mp4" type="video/mp4"></video></p>
 
-
 _Bemærk at duplikering af objekter på denne måde ikke er den bedste måde at lave mange ens objekter på. Her vil man i stedet normalt bruge **Prefabs**, men det vender vi tilbage til i en senere vejledning._
 
 # Trin 4 - Sluk lyset!
@@ -122,29 +131,39 @@ Lad os prøve at gøre lyset i scenen lidt mere spændende. Som standard starter
 Lad os slå begge dele fra, så vi "slukker lyset" helt.
 
 * Vælg *Directional Light* under *Hierarchy*
-* Under *Inspector*, fjern hakket til venstre for navnet.  
+* Under *Inspector*, fjern hakket til venstre for navnet.
+
 ![Disable Light](res/226475732.png)
 
-* Gå ind i menuen *Window, Rendering, Lighting*  
+* Gå ind i menuen *Window, Rendering, Lighting*
+
 ![Lighting Menu](res/226475879.png)
-* Tryk på *Environment*  
+
+* Tryk på *Environment*
+
 ![Environment](res/226476004.png)
-* Tryk på den lille cirkel med en prik 
-![cirkel prik](res/226476486.png)
-, til højre for *Skybox Material*  
+
+* Tryk på den lille cirkel med en prik ![cirkel prik](res/226476486.png), til højre for *Skybox Material*
+
 ![Skybox Material](res/226476282.png)
-* Vælg Material "None".  
+
+* Vælg Material "None".
+
 ![Select Material](res/226476386.png)
 
 * Sæt Environment Lighting, *Source* til *Color*
-* Sæt Environment Lighting, *Ambient Color* til helt sort  
+* Sæt Environment Lighting, *Ambient Color* til helt sort
+
 ![Environment Lighting](res/226477047.png)
-* Tryk på krydset i for at lukke Lighting vinduet 
+
+* Tryk på krydset i for at lukke Lighting vinduet
+
 ![image](res/226477142.png)
 
 * Klik på *Main Camera* under Hierarchy
 * I Inspector, Camera, *Clear Flags* vælg *Solid Color*
-* Sæt *Background Color* til helt sort  
+* Sæt *Background Color* til helt sort
+
 ![Camera](res/226477367.png)
 
 Prøv at afspille scenen nu. Det skulle gerne være **helt sort** nat nu.
@@ -153,15 +172,18 @@ Prøv at afspille scenen nu. Det skulle gerne være **helt sort** nat nu.
 
 * Under Hierarchy, Plus knappen, Light, vælg *Spot Light*
 * Brug de farvede pile til at placere dit nye Spot light så det oplyser stedet hvor kuglerne falder ned.
-* Skift til at rotere, og træk i de farvede buer for at dreje lyset. Det ser som regel bedst ud hvis lyset kommer lidt fra siden, og bag kameraet. Men prøv dig frem til noget du synes ser fedt ud!  
+* Skift til at rotere, og træk i de farvede buer for at dreje lyset. Det ser som regel bedst ud hvis lyset kommer lidt fra siden, og bag kameraet. Men prøv dig frem til noget du synes ser fedt ud!
+
 ![Rotate Light](res/226478172.png)
 
 ***Tip**: Du kan bruge genvejs tasterne Q,W,E,R,T,Y til at skifte mellem de 6 forskellige værktøjer i menuen. Så tryk fx E for at skifte til Rotér, og W for at komme tilbage til flyt.*
 
-* Øg evt *Range* og *Spot Angle* i Inspector under Light  
+* Øg evt *Range* og *Spot Angle* i Inspector under Light
+
 ![Light Settings](res/226478532.png)
 
-* Under Light, Shadow Type, vælg **Soft Shadows**  
+* Under Light, Shadow Type, vælg **Soft Shadows**
+
 ![Soft Shadows](res/226481495.png)
 
 Du kan også justere lidt på placeringen af **Main Camera**
@@ -180,7 +202,8 @@ Fortsæt med at justere lys og kamera indtil du er tilfreds. Det kan for eksempe
 * Ændr farven til ren grøn
 * Lav en kopi mere, flyt den lidt og lav den blå
 
-Det burde se ud i stil med dette:  
+Det burde se ud i stil med dette:
+
 ![image](res/226481128.png)
 
 Bemærk at der hvor alle tre lys rammer, er der normalt hvidt lys.
@@ -193,4 +216,4 @@ Min version kom til at se sådan her ud, men jeg glæder mig til at se jeres!
 
 Prøv gerne at tilføje flere planes, kugler og andre former!
 
-I næste vejledning [[Lys og Kugler 2]] bygger vi videre på det vi har lavet her, og tilføjer kode så det begynder at føles lidt som et spil.
+I næste vejledning [Lys og Kugler 2](../lights_and_balls2/index.md) bygger vi videre på det vi har lavet her, og tilføjer kode så det begynder at føles lidt som et spil.
