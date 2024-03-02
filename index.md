@@ -23,8 +23,8 @@ Templates / Demo Projects
 
 Tutorials
 
-* [Lys og Kugler 1](https://github.com/marpor/codingpirates/wiki/Lys-og-Kugler-1) 🇩🇰
-* [Lys og Kugler 2](https://github.com/marpor/codingpirates/wiki/Lys-og-Kugler-2) 🇩🇰
+* [Lys og Kugler 1](unity/lights_and_balls1/index.md) 🇩🇰
+* [Lys og Kugler 2](unity/lights_and_balls2/index.md) 🇩🇰
 * [Michaels Tutorials](https://github.com/mhfalken/unity) 🔗🇩🇰
 * [The Unity Tutorial for Complete Beginners](https://www.youtube.com/watch?v=XtQMytORBmM) 🔗🎬 (YouTube)
 
