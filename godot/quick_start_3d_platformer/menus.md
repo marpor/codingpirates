@@ -7,13 +7,12 @@ In this mini-guide, we'll make add a menu to our game, using Godot's User Interf
 
 Let's get started.
 
-* Add a new scene
-* For the root node, choose `User Interface`. This adds a new `Control` node as the root.
-
 * [Create a new Scene](../tips/create_a_scene.md) and [add the following nodes](../tips/add_nodes.md) (name: `Type`)
    * MainMenu: `Control`
      * Title: `Label`
      * StartButton: `Button`
+
+* Save your scene as `main_menu.tscn`
 
 ## Adjust Title
 * Select `Title`
@@ -53,7 +52,6 @@ This is roughly what it could look like now.
 
 ![WIP](res/menus/wip1.png)
 
-* Save your scene as `main_menu.tscn`
 * Press F6 to try your menu scene
 
 * Feel free to add more labels for things like author, copyright etc.
