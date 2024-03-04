@@ -17,16 +17,16 @@ Let's get started.
 ## Adjust Title
 * Select `Title`
 
-* From the toolbar ![preset](res/menus/preset_button.png) button choose `Center Top`
+* From the toolbar ![preset](res/menus/preset_button.png) button choose `Center Top`:
 
 ![Center Top](res/menus/center_top.png)
 
 * Set `Text` to "My Game" - or whatever you'd like to call your game
 * Set `Horizontal Alignment` to `Center`
-* Drag the Text node down a bit
+* Move the Text down a bit
 
 * Under `Control`/`Theme Overrides` adjust the look of the text to your liking.  
-Here's an example:
+_For example_:
 
     * `Font Outline Color` = black
     * `Outline Size` = `12`
@@ -38,10 +38,10 @@ Here's an example:
 
 * Select `StartButton`
 * From the toolbar ![preset](res/menus/preset_button.png) button choose `Center Top`
-* Drag the StartButton down so it's below the text
+* Move the StartButton down so it's below the text
 * Set `Text` to "Start"
 * Under `Control`/`Theme Overrides` adjust the look of the text to your liking.  
-Here's an example:
+_For example_:
 
     * `Font` = `lilita_one_regular.ttf` (use `Quick Load`)
     * `Font Size` = `40`
@@ -70,9 +70,13 @@ _This is going to be useful for other button later!_
 ```gdscript
 extends Button
 
-@export_file("*.tscn") var scene: String
+# Makes a file selector available in the Inspector, and
+# stores the path of the selected file in the variable "scene".
+@export_file("*.tscn") var scene
 
-func _on_pressed() -> void:
+# When the user presses the button of the script
+func _on_pressed():
+	# Change to the selected scene
 	get_tree().change_scene_to_file(scene)
 ```
 

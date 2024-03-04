@@ -5,7 +5,7 @@ title: Changing Things
 
 Next, let's try to move that coin next to the player up a bit so we have to jump to get it.
 
-* Click the coin to select it
+* Click the coin to select it:
 
 ![Click coin](res/click_coin.png)
 
@@ -13,9 +13,9 @@ When selected it should look like this:
 
 ![Coin selected](res/coin_selected.png)
 
-*If nothing happens, you may have accidentally pressed W without the right mouse button clicked, and changed to Move Mode. Click Q or the selection arrow to get back to Selection Mode, and try again.*
-
-![Move mode](../assets/move_mode.png)
+> _If nothing happens, you may have accidentally pressed W without the right mouse button clicked, and changed to Move Mode. Click Q or the selection arrow to get back to Selection Mode, and try again._
+>
+> ![Move mode](../assets/move_mode.png)
 
 * Press ```F``` to Focus on the coin
 * Click and drag the *green* arrow to move the coin upwards.  
