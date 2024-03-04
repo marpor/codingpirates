@@ -48,12 +48,12 @@ For now, though, we'll focus our attention on the _3D viewport_.
 
 # Mini-guides
 
-* [Portals](portals.md)
-* [Moving Platforms](moving_platforms.md)
-* [Environment](environment.md)
-* [Make a Sign](sign.md)
-* [Make a Menu](menus.md)
-* [Menu Signs](menu_signs.md)
+* [Portals](portals.md) - move between levels
+* [Moving Platforms](moving_platforms.md) - increase the difficulty
+* [Environment](environment.md) - the night comes
+* [Make a Sign](sign.md) - guide the player, or just for fun!
+* [Make a Menu](menus.md) - a place for your name (and other things)
+* [Menu Signs](menu_signs.md) - menus or just text when you walk up to signs, Roblox style
 
 # Ideas
 
