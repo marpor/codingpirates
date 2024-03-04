@@ -53,6 +53,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Environment](environment.md)
 * [Make a Sign](sign.md)
 * [Make a Menu](menus.md)
+* [Menu Signs](menu_signs.md)
 
 # Ideas
 
@@ -61,7 +62,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Custom Platforms](custom_platforms.md)
 * [Make a "Runner" Game](runner.md)
 
-<!-- 
+<!--
 F to toggle fullscreen.
 Autoload scene with HUD.
 
