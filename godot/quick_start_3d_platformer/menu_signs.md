@@ -49,7 +49,7 @@ func _on_area_3d_body_entered(body):
 		menu = menu_scene.instantiate()
 
 		# Add it to the SceneTree on the root node
-		get_node("/root").add_child(menu)
+		get_tree().root.add_child(menu)
 
 # When something (likely the player) exits the Area3D node
 func _on_area_3d_body_exited(body):
