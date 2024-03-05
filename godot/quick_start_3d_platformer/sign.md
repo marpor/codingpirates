@@ -9,13 +9,13 @@ In this mini-guide, we'll make a little sign that you can place in your world, w
 
 * [Create a new Scene](../tips/create_a_scene.md) and [add the following nodes](../tips/add_nodes.md) (name: `Type`)
    * Sign: `StaticBody3D`
-     * `CollisionShape3D`
+     * CollisionShape3D: `CollisionShape3D`
      * Stick: `MeshInstance3D`
        * Plate: `MeshInstance3D`
          * Text: `Label3D`
 
 Like this:
-![Sign WIP 0](res/sign/wip2.png)
+![Sign WIP 0](res/sign/wip0.png)
 
 * Save your new scene in the `objects` directory.  
 _It should automatically get called `sign.tscn` if you named your root node "Sign" as shown above._
