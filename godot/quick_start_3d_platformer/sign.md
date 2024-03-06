@@ -77,7 +77,7 @@ It can now look something like this:
 
 * Now open a level scene where you would like to place your sign
 * _Instance_ the sign by _dragging_ `sign.tscn` from the `FileManager` onto the desired position in the scene
-* Adjust the position and rotation of the as you please
+* Adjust the position and rotation as you please
 
 ![Sign WIP 4](res/sign/wip4.png)
 
