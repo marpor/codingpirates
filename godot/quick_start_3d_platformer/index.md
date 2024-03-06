@@ -55,6 +55,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Make a Menu](menus.md) - a place for your name (and other things)
 * [Menu Signs](menu_signs.md) - menus or just text when you walk up to signs, Roblox style
 * ["Autoload"](autoload.md) - keep track of coins and other things across levels
+* [Export](export.md) - export your game for sharing with others
 
 # Ideas
 
