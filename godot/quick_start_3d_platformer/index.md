@@ -42,10 +42,6 @@ If this is your first Godot experience, you may want to familiarize yourself wit
 For now, though, we'll focus our attention on the _3D viewport_.
 -->
 
-# Tips
-
-* [Multi Select](multi_select.md)
-
 # Mini-guides
 
 * [Portals](portals.md) - move between levels
@@ -57,6 +53,11 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * ["Autoload"](autoload.md) - keep track of coins and other things across levels
 * [Export](../export.md) - export your game for sharing with others
 
+# Tips
+
+* [Multi Select](multi_select.md)
+
+
 # Ideas
 
 * [Player Speed & Jump Power](player_speed.md) - to the moon
@@ -64,28 +65,25 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Custom Platforms](custom_platforms.md)
 * [Make a "Runner" Game](runner.md)
 
+
 <!--
+Krav om at samle alle mønter op før man kan gå videre
+Importere grafikker fra Itch.io o.l
+
+
 F to toggle fullscreen.
 Autoload scene with HUD.
+Custom Platforms
 
-Moving Platforms
-Nattebane
-Dobbeltgænger ()
-Anden tyngdekraft
-Levels med Portaler
---
+
 Runner / Slope variant
 --
 x Tip: Auto-hide Output
 x Musik: CC0 fx pixabay
-Krav om at samle alle mønter op før man kan gå videre
 Platform der forsvinder (fake)
 Tre liv + Samle liv (evt. fra mønter)
-Menu - Start (køb skins, kreditkort formular)
-Custom Platforms
 Skilte
 Lava eller lign
-Importere grafikker fra Itch.io o.l
 Monstre (man skal hoppe på?) - grinde ting til monstre, save og andet
 Skin
 Jump Scare (nattebane, så kommer der noget scary frem)
