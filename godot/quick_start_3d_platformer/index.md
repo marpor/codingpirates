@@ -53,6 +53,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * ["Autoload"](autoload.md) - keep track of coins and other things across levels
 * [Collision Masks](collision_masks.md) - make sure only the player can activate coins and flags
 * [Export](../export.md) - export your game for sharing with others
+* [Going Fullscreen](fullscreen.md) - add a toggle for showing your game full screen
 
 # Tips
 
