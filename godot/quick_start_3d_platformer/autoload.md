@@ -97,22 +97,9 @@ func _on_body_entered(body):
 
 Notice that we're no longer checking if `body` has the `collect_coin` method. This was a convenient way to ensure that we're only reacting to the **Player** grabbing coins.
 
-This means that we can now get in a situation where other bodies (like platforms) touch the coin collision shape and thereby "grab" the coins.
-
-To prevent that, let's use **Collision Masks**:
-
-* Open the **Player** scene
-* Pick the root `Player` node
-* In the `Inspector`, under `Collision` / `Layer`, add layer `2`:
-
-![Collision Layer](res/autoload/collision_layer.png)
-
-* Open the **Coin** scene
-* For `Collision` / `Mask`, remove `1` and add `2`:
-
-![Collision Mask](res/autoload/collision_mask.png)
-
-This ensures that the coin only reacts to bodies on layer 2. Since Player is the only one that has layer 2 set, we effectively filter out everything else.
+> This means that we can now get in a situation where other bodies (like platforms) touch the coin collision shape and thereby "grab" the coins.
+>
+> To prevent that, follow the steps in the [Collision Masks](collision_masks.md) guide, if you haven't already.
 
 * Try your game again. Coins should now be counted correctly across levels!
 
