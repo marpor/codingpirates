@@ -54,6 +54,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Collision Masks](collision_masks.md) - make sure only the player can activate coins and flags
 * [Export](../export.md) - export your game for sharing with others
 * [Going Fullscreen](fullscreen.md) - add a toggle for showing your game full screen
+* [Required Pickups](required_pickups.md) - required pickups to change levels
 
 # Tips
 
@@ -72,11 +73,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 Krav om at samle alle mønter op før man kan gå videre
 Importere grafikker fra Itch.io o.l
 
-
-F to toggle fullscreen.
-Autoload scene with HUD.
 Custom Platforms
-
 
 Runner / Slope variant
 --
@@ -84,7 +81,6 @@ x Tip: Auto-hide Output
 x Musik: CC0 fx pixabay
 Platform der forsvinder (fake)
 Tre liv + Samle liv (evt. fra mønter)
-Skilte
 Lava eller lign
 Monstre (man skal hoppe på?) - grinde ting til monstre, save og andet
 Skin
