@@ -16,6 +16,8 @@ In this guide we'll make a low-poly mushroom like this:
 * Select the default Cube
 * Press `X`, then `Enter` to delete the Cube
 
+# Add a Cylinder
+
 * Press `Shift+A` to open the Add menu
 * Choose `Mesh` then `Cylinder``
 
@@ -38,6 +40,8 @@ It will be rather small, but should look something like this:
 >
 > Also, for the initial size (Radius, Depth), we're just going for something that's smaller than a typical character (1-2m tall).
 
+# Local View
+
 * From the `View` menu, choose `Local View` and then `Toggle Local View` to zoom in on your newly created cylinder
 
 ![Toggle Local View](mushroom/local_view.png)
@@ -46,7 +50,9 @@ It will be rather small, but should look something like this:
 
 * You may want to zoom out a bit. _Use the `Mouse Wheel` on Windows or `Cmd+Two Finger drag` on Mac._
 
-* Press the `Tab` key to enter Edit mode, or use the `Interaction Mode` switcher:
+# Edit Mode
+
+* Press the `Tab` key to enter **Edit Mode**, or use the `Interaction Mode` switcher:
 
 ![Edit Mode](mushroom/edit_mode.png)
 
@@ -54,7 +60,9 @@ It will be rather small, but should look something like this:
 
 ![Edge Selection Mode](mushroom/edge_selection_mode.png)
 
-* Hold `Alt` (Windows) or `Option` (Mac) and `Left-Click` on one of the top edges on your cylinder:
+# Extrude and Scale
+
+* `Alt + Left-Click` on one of the top edges on your cylinder:
 
 ![Select Top Loop](mushroom/select_top_loop.png)
 
@@ -88,6 +96,8 @@ It will be rather small, but should look something like this:
 >
 > All we're going for now is the overall shape of a mushroom!
 
+# Closing the Top
+
 * Press the Auto-Merge Vertices button: ![alt text](mushroom/auto_merge_vertices_button.png)
 
 ![alt text](mushroom/auto_merge_vertices_enabled.png)
@@ -101,12 +111,16 @@ We now have a very coarse mushroom:
 ![alt text](mushroom/mushroom_phase1.png)
 ![alt text](mushroom/mushroom_phase1_bottom.png)
 
+# Closing the Bottom
+
 Notice that the bottom of our mushroom is closed. Let's fix that.
 
-* Select the bottom edge loop (Alt or Option + Left-Click)
+* Select the bottom edge loop (`Alt + Left-Click`)
 * Press `F` to form a new Face from the loop
 
 ![alt text](mushroom/bottom_closed.png)
+
+# Better Stem
 
 Now that we're on the bottom, let's make the stem a little less straight.
 
@@ -121,16 +135,18 @@ Now that we're on the bottom, let's make the stem a little less straight.
 
 ![alt text](mushroom/ring_scale.png)
 
-Now, let's add a bit more detail.
+# More Details
 
-* Press `Alt` or `Option` and `Z` to toggle "X-ray" mode
+Now, let's add a bit more detail. While 5 segments are OK for the stem, the "hat" of the mushroom is probably a bit too pointy.
+
+* Press `Alt + Z` to toggle "X-ray" mode
 * While **holding `Shift`**, click and drag around the edges on each of the 5 corners of the mushroom "hat" to select them like this:
 
 ![alt text](mushroom/hat_corners_selection.png)
 
-* Press `Alt` or `Option` and `Z` to toggle "X-ray" mode off again
+* Press `Alt + Z` to toggle "X-ray" mode off again
 
-* Press `Ctrl` or `Cmd` + `B` to start the Bevel command
+* Press `Ctrl + B` to start the Bevel command
 * Move the mouse to get a good sized bevel:
 
 ![alt text](mushroom/bevel_corners.png)
