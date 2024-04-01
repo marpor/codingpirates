@@ -185,3 +185,141 @@ Now, let's add a bit more detail. While 5 segments are OK for the stem, the "hat
 
 * Check the bottom of your mushroom. If it doesn't look good, Undo (Ctrl+Z) a few times and try a different size bevel, or try beveling a different set of edges. It doesn't have to look exactly like mine.
 
+# More details
+
+Blender has a nice way to add details to any Mesh using Modifiers.
+
+* Click the `Modifiers` button ![Modifiers Button](res/mushroom/modifiers_button.png) on the bottom-right panel:
+
+![Modifiers Button Big](res/mushroom/modifiers_button_big.png)
+
+* Click `Add Modifier`
+* Choose `Subdivision Surface` under `Generate`:
+
+![Add Subdivision Surface Modifier](res/mushroom/add_modifier_subdivision.png)
+
+Notice how the mushroom preview is now more detailed:
+
+![Mushroom Subdivision Modified](res/mushroom/subdivision_modified.png)
+
+Having the subdivision shown while editing can get a little annoying, but fortunately Blender allows this to be customized.
+
+* Click the ![Edit Mode Button](res/mushroom/modifier_edit_mode_button.png) button to turn off subdivision preview during editing.
+
+![Modifier Edit Mode](res/mushroom/modifier_edit_mode.png)
+
+* Press `Tab` to switch to **Object Mode**
+* Press `Tab` again to switch back to **Edit Mode**
+
+Notice how the preview changes.
+
+Using a subdivision modifier like this allows us to keep modeling with simple geometry while having more details for preview and (later) rendering and export.
+
+# Coloring
+
+Ok. Time for some color.
+
+* Press `3` to switch to `Face
+* Select one part of the Mushroom "hat" like this:
+
+![Mushroom Hat Face Selection](res/mushroom/mushroom_hat_face_selection.png)
+
+You may also want to include faces from the underside of the "hat".
+
+* Press `Shift+G` and choose `Area` to select the entire hat
+
+> If you don't get exactly the right set of faces you may want to lower the `Select Similar` `Threshold`:
+> 
+> ![Select Similar Threshold](res/mushroom/select_similar_threshold.png)
+
+You'll want a selection like this:
+
+![Entire Hat Selected](res/mushroom/hat_selected.png)
+
+* Go to the `Materials` panel by clicking the ![Material](res/mushroom/material_button.png) button
+
+* Press the `New` button
+
+![New Material Button](res/mushroom/new_material_button.png)
+
+* Click the colored field for `Base Color`:
+
+![Base Color](res/mushroom/base_color.png)
+
+* Choose any color you'd like for the hat
+* Press the `Assign` button
+
+You'll notice that the preview doesn't change. That's because we're in `Solid` viewport shading mode.
+
+* Click the ![Material Preview](res/mushroom/material_preview_button.png) button in the top-right corner:
+
+![Material Preview](res/mushroom/material_preview.png)
+
+* _Alternatively:_ Press `Z`, then select `Material Preview`
+
+Your mushroom should now show in the color you've chosen. But since there's only one material it'll be used for the entire mushroom, despite our current selection. Let's fix that but adding a second material for the stem.
+
+* Create another material by pressing the `+` button
+* Press the `New` button
+* Pick a `Base Color` suitable for the stem
+* Press `Ctrl+I` to invert the selection, so the stem is selected
+* Press the `Assign` button
+* Press `Tab` to switch back to *Object Mode* preview:
+
+![Mushroom Colored](res/mushroom/colored.png)
+
+# Saving
+
+If you haven't already done this, now would be a very good time to save your Blender file.
+
+* Press `Ctrl+S` to save
+
+If this is the first save, Blender will ask for a name and location
+
+# Exporting
+
+To use your Mushroom in another application like Godot, you'll need to _export_ it.
+
+* From the `File` menu, choose `Export`, then `glTF 2.0 (.glb/.gltf)`:
+
+![Export glTF 2.0](res/mushroom/export_gltf.png)
+
+* Navigate to a suitable location for your exported file
+* Expand `Include`
+* Enable `Export Selected` (assuming you've still got your Mushroom selected)
+* Expand `Geometry` and `Mesh`
+* Enable `Apply Modifiers`
+* Type a name of your liking in the name field
+
+![Export glTF Dialog](res/mushroom/export_gltf_dialog.png)
+
+* Press `Export glTF 2.0`
+* Enjoy your **glTF** file
+
+# Variety
+
+* Make sure you're in *Object Mode*
+* Press `Shift+D` to create a copy of the mushroom
+* Press `Shift+Z` to restrict movement to the floor (`XY` plane)
+* Move the mouse to move the copy a bit away from the original
+* `Left-Click` to place the copy
+* Press `Tab` with your copy selected to edit it
+
+Use the following tools to make your copy slightly different.
+
+Select things:
+
+* Use keys `1`, `2` and `3` to make changes to vertices, edges and faces respectively
+* Make individual selections by `Left-clicking`, `Holding Shift` to select multiple vertices/edges/faces
+* `Left-Click and Drag` to make a box selection
+* Use `Shift+G` to select similar vertices/edges/faces
+
+With something selected, make some changes:
+
+* Use key `G` to **move** the selection
+* Use key `S` to **scale** the selection
+* Use key `R` to **rotate** the selection
+
+Assign different colors to different types of mushrooms.
+
+Export each muchroom in it's own file, or export clusters of mushrooms together.
