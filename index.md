@@ -39,6 +39,11 @@ Templates / Demo Projects
 
 <!-- [Emoji Catcher Tutorial](emoji-catcher) -->
 
+# Blender
+
+* [A Low-Poly Mushroom](blender/mushroom.md)
+
+
 Enjoy!
 
 /Marken
