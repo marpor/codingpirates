@@ -6,22 +6,27 @@ title: A Low-Poly Mushroom in Blender 4.0
 
 In this guide we'll make a low-poly mushroom like this:
 
-![Final Result](mushroom/final.png)
+![Final Result](res/mushroom/final.png)
 
 * Start Blender
 * Switch to the `Modeling` workspace
 
-![Modeling Tab](mushroom/modeling_tab.png)
+![Modeling Tab](res/mushroom/modeling_tab.png)
 
 * Select the default Cube
 * Press `X`, then `Enter` to delete the Cube
 
 # Add a Cylinder
 
-* Press `Shift+A` to open the Add menu
-* Choose `Mesh` then `Cylinder``
+* Press `Shift+A` to open the **Add** menu
 
-![Add Cylinder](mushroom/add_cylinder.png)
+![Add Cylinder](res/mushroom/add_cylinder.png)
+
+* Choose `Mesh` then `Cylinder`
+
+> _Alternatively_ use the button on the toolbar:
+>
+> ![Add Cylinder Button](res/mushroom/add_cylinder_mesh_menu.png)
 
 * In the `Add Cylinder` options, set the following:
   * Vertices: 5
@@ -30,11 +35,11 @@ In this guide we'll make a low-poly mushroom like this:
   * Cap Fill Type: None
   * Z: 0.2m
 
-![Add Cylinder Options](mushroom/add_cylinder_options.png)
+![Add Cylinder Options](res/mushroom/add_cylinder_options.png)
 
 It will be rather small, but should look something like this:
 
-![WIP](mushroom/wip1.png)
+![WIP](res/mushroom/wip1.png)
 
 > Since we're going for a low-poly look, 5 is a good start here. But even for a high-poly design this is not a bad starting value since we can add more polygons later with _modifiers_.
 >
@@ -44,9 +49,11 @@ It will be rather small, but should look something like this:
 
 * From the `View` menu, choose `Local View` and then `Toggle Local View` to zoom in on your newly created cylinder
 
-![Toggle Local View](mushroom/local_view.png)
+![Toggle Local View](res/mushroom/local_view.png)
 
 > This is also very handy if you create multiple objects in one Blender document and want to edit them one by one.
+>
+> Having a shortcut for this is very handy. The default is the `Numpad /` key. If you don't have a numpad, you can set a different *Key binding* from the `Preferences`, `Keymap` menu. I'm using `7` on my keyboard.
 
 * You may want to zoom out a bit. _Use the `Mouse Wheel` on Windows or `Cmd+Two Finger drag` on Mac._
 
@@ -54,43 +61,47 @@ It will be rather small, but should look something like this:
 
 * Press the `Tab` key to enter **Edit Mode**, or use the `Interaction Mode` switcher:
 
-![Edit Mode](mushroom/edit_mode.png)
+![Edit Mode](res/mushroom/edit_mode.png)
 
 * Press the `2` key to switch to `Edge Selection Mode`
 
-![Edge Selection Mode](mushroom/edge_selection_mode.png)
+![Edge Selection Mode](res/mushroom/edge_selection_mode.png)
 
 # Extrude and Scale
 
+We'll now build the basic shape of our mushroom.
+
+Don't worry if it don't turn exactly right on the first try. We'll tweak the shape later.
+
 * `Alt + Left-Click` on one of the top edges on your cylinder:
 
-![Select Top Loop](mushroom/select_top_loop.png)
+![Select Top Loop](res/mushroom/select_top_loop.png)
 
 * Press `E` to start extruding
 * Move your mouse up a bit:
 
-![alt text](mushroom/extrude1.png)
+![Extrude](res/mushroom/extrude1.png)
 
 * Press `Z` to restrict extrusion to the Z axis (up/down)
 
-![alt text](mushroom/extrude2.png)
+![Extrude Z](res/mushroom/extrude2.png)
 
 * Press `S` to scale, and make the loop larger:
 
-![alt text](mushroom/scale1.png)
+![Scale](res/mushroom/scale1.png)
 
 * Press `E`, then `Z` to extrude along Z again
 * This time, move *down* a bit:
 
-![alt text](mushroom/extrude3.png)
+![Extrude Down](res/mushroom/extrude3.png)
 
 * `S` to scale again:
 
-![alt text](mushroom/scale2.png)
+![Scale](res/mushroom/scale2.png)
 
-* Repeat Extruding, Scaling a few times to get something like this:
+* Repeat **Extruding** and **Scaling** a 4 times to get something like this:
 
-![alt text](mushroom/repeat1.png)
+![Repeat 4 times](res/mushroom/repeat1.png)
 
 > Avoid creating many steps. In Blender, it's generally an advantage to start out with as little geometry as possible, and the add details later.
 >
@@ -98,9 +109,9 @@ It will be rather small, but should look something like this:
 
 # Closing the Top
 
-* Press the Auto-Merge Vertices button: ![alt text](mushroom/auto_merge_vertices_button.png)
+* Press the Auto-Merge Vertices button: ![alt text](res/mushroom/auto_merge_vertices_button.png)
 
-![alt text](mushroom/auto_merge_vertices_enabled.png)
+![Auto Merge Vertices Enabled](res/mushroom/auto_merge_vertices_enabled.png)
 
 * `S` to scale, then pres `0` to scale to zero and close the top of our mushroom
 
@@ -108,17 +119,30 @@ It will be rather small, but should look something like this:
 
 We now have a very coarse mushroom:
 
-![alt text](mushroom/mushroom_phase1.png)
-![alt text](mushroom/mushroom_phase1_bottom.png)
+![Mushroom Coarse](res/mushroom/mushroom_phase1.png)
+
+# Tweaking the Shape
+
+Rotate the view around and check that the shape of the mushroom is like you want it. If it's not quite right, you can:
+
+* `Alt + Click` edges to select loops on the mushroom, then
+* `S`, `Move mouse` to **scale** the selected loops
+* `G`, `Z`, `Move mouse` to **move** the selected loops up and down (in Z)
+
+Repeat scaling and moving until you're happy with the shape.
 
 # Closing the Bottom
 
-Notice that the bottom of our mushroom is closed. Let's fix that.
+Notice that the bottom of our mushroom is still open.
+
+Let's fix that.
+
+![Mushroom Bottom Open](res/mushroom/mushroom_phase1_bottom.png)
 
 * Select the bottom edge loop (`Alt + Left-Click`)
-* Press `F` to form a new Face from the loop
+* Press `F` to form a new *Face* from the loop
 
-![alt text](mushroom/bottom_closed.png)
+![Mushroom Bottom Closed](res/mushroom/bottom_closed.png)
 
 # Better Stem
 
@@ -129,11 +153,11 @@ Now that we're on the bottom, let's make the stem a little less straight.
 * Click once
 * Move the ring towards the bottom of the stem
 
-![alt text](mushroom/ring_cut.png)
+![Mushroom Stem Ring Cut](res/mushroom/ring_cut.png)
 
 * Press `S`, then move the mouse to scale the ring up a bit
 
-![alt text](mushroom/ring_scale.png)
+![Mushroom Stem Ring Scale](res/mushroom/ring_scale.png)
 
 # More Details
 
@@ -142,14 +166,14 @@ Now, let's add a bit more detail. While 5 segments are OK for the stem, the "hat
 * Press `Alt + Z` to toggle "X-ray" mode
 * While **holding `Shift`**, click and drag around the edges on each of the 5 corners of the mushroom "hat" to select them like this:
 
-![alt text](mushroom/hat_corners_selection.png)
+![Mushroom Hat Corner Selection](res/mushroom/hat_corners_selection.png)
 
 * Press `Alt + Z` to toggle "X-ray" mode off again
 
 * Press `Ctrl + B` to start the Bevel command
 * Move the mouse to get a good sized bevel:
 
-![alt text](mushroom/bevel_corners.png)
+![Mushroom Hat Bevel Corners](res/mushroom/bevel_corners.png)
 
 * Check the bottom of your mushroom. If it doesn't look good, Undo (Ctrl+Z) a few times and try a different size bevel, or try beveling a different set of edges. It doesn't have to look exactly like mine.
 
