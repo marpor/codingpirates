@@ -62,19 +62,6 @@ It will be rather small, but should look something like this:
 > Having a shortcut for this is very handy. The default is the `Numpad .` key. If you don't have a numpad, you can set a different *Key binding* from the `Preferences`, `Keymap` menu. I'm using `F` on my keyboard.
 -->
 
-<!--
-# Local View
-
-* From the `View` menu, choose `Local View` and then `Toggle Local View` to zoom in on your newly created cylinder
-
-![Toggle Local View](res/mushroom/local_view.png)
-
-> This is also very handy if you create multiple objects in one Blender document and want to edit them one by one.
->
-> Having a shortcut for this is very handy. The default is the `Numpad /` key. If you don't have a numpad, you can set a different *Key binding* from the `Preferences`, `Keymap` menu. I'm using `7` on my keyboard.
-
--->
-
 # Edit Mode
 
 * Press the `Tab` key to enter **Edit Mode**, or use the `Interaction Mode` switcher:
@@ -96,24 +83,25 @@ Don't worry if it don't turn exactly right on the first try. We'll tweak the sha
 ![Select Top Loop](res/mushroom/select_top_loop.png)
 
 * Press `E` to start extruding
-* Move your mouse up a bit:
-
-![Extrude](res/mushroom/extrude1.png)
-
+* Move your mouse up a bit <!-- ![Extrude](res/mushroom/extrude1.png)-->
 * Press `Z` to restrict extrusion to the Z axis (up/down)
+* `Left-Click` when you have something like this:
 
 ![Extrude Z](res/mushroom/extrude2.png)
 
-* Press `S` to scale, and make the loop larger:
+* Press `S` to scale, and make the loop larger
+* `Left-Click` when you have something like this:
 
 ![Scale](res/mushroom/scale1.png)
 
 * Press `E`, then `Z` to extrude along Z again
-* This time, move *down* a bit:
+* This time, move *down* a bit
+* `Left-Click` when you have something like this:
 
 ![Extrude Down](res/mushroom/extrude3.png)
 
 * `S` to scale again:
+* `Left-Click` when you have something like this:
 
 ![Scale](res/mushroom/scale2.png)
 
@@ -121,19 +109,14 @@ Don't worry if it don't turn exactly right on the first try. We'll tweak the sha
 
 ![Repeat 4 times](res/mushroom/repeat1.png)
 
-> Avoid creating many steps. In Blender, it's generally an advantage to start out with as little geometry as possible, and the add details later.
->
-> All we're going for now is the overall shape of a mushroom!
+> Avoid creating too many steps. In Blender, it's generally an advantage to start out with as little geometry as possible, and the add details later.
 
 # Closing the Top
 
-* Press the Auto-Merge Vertices button: ![alt text](res/mushroom/auto_merge_vertices_button.png)
+* Press `M` to Merge vertices
+* Choose `At Center`:
 
-![Auto Merge Vertices Enabled](res/mushroom/auto_merge_vertices_enabled.png)
-
-* `S` to scale, then pres `0` to scale to zero and close the top of our mushroom
-
-> Since we have auto merge vertices enabled, this will form a singular vertex at the top of our mushroom.
+![Merge Vertices Menu](res/mushroom/merge_menu.png)
 
 We now have a very coarse mushroom:
 
@@ -144,8 +127,8 @@ We now have a very coarse mushroom:
 Rotate the view around and check that the shape of the mushroom is like you want it. If it's not quite right, you can:
 
 * `Alt + Click` edges to select loops on the mushroom, then
-* `S`, `Move mouse` to **scale** the selected loops
-* `G`, `Z`, `Move mouse` to **move** the selected loops up and down (in Z)
+* `S`, `Move mouse`, `Left-Click` to **scale** the selected loops
+* `G`, `Z`, `Move mouse`, `Left-Click` to **move** the selected loops up and down (in Z)
 
 Repeat scaling and moving until you're happy with the shape.
 
@@ -168,12 +151,13 @@ Now that we're on the bottom, let's make the stem a little less straight.
 
 * Press `Ctrl+R` to add a *Ring Cut*
 * Move the mouse over the stem
-* Click once
+* `Left-Click`
 * Move the ring towards the bottom of the stem
+* `Left-Click` when you have something like this:
 
 ![Mushroom Stem Ring Cut](res/mushroom/ring_cut.png)
 
-* Press `S`, then move the mouse to scale the ring up a bit
+* `S`, `Move mouse`, `Left-Click` to scale the ring outwards a bit
 
 ![Mushroom Stem Ring Scale](res/mushroom/ring_scale.png)
 
@@ -181,15 +165,21 @@ Now that we're on the bottom, let's make the stem a little less straight.
 
 Now, let's add a bit more detail. While 5 segments are OK for the stem, the "hat" of the mushroom is probably a bit too pointy.
 
-* Press `Alt + Z` to toggle "X-ray" mode
-* While **holding `Shift`**, click and drag around the edges on each of the 5 corners of the mushroom "hat" to select them like this:
+* Press `Alt + Z` to toggle "X-ray" mode, or use the button in the toolbar:
+
+![X-Ray Button](res/mushroom/toggle_xray.png)
+
+* Select the edges like shown below. There's a couple of options:
+  * While **holding `Shift`**, `Left-Click` each edge
+  * While **holding `Shift`**, `Click and drag` around the edges
+  * Select the edges for one corner, then press `Shift+G` and choose `Face Angles` to select _similar_ edges. 
 
 ![Mushroom Hat Corner Selection](res/mushroom/hat_corners_selection.png)
 
 * Press `Alt + Z` to toggle "X-ray" mode off again
-
 * Press `Ctrl + B` to start the Bevel command
-* Move the mouse to get a good sized bevel:
+* Move the mouse to get a good sized bevel
+* `Left-Click` when you have something like this:
 
 ![Mushroom Hat Bevel Corners](res/mushroom/bevel_corners.png)
 
