@@ -9,9 +9,12 @@ In this guide we'll make a low-poly mushroom like this:
 ![Final Result](res/mushroom/final.png)
 
 * Start Blender
-* Switch to the `Modeling` workspace
+
+<!--
+* Switch to the `Modeling` workspace (at the top of the screen)
 
 ![Modeling Tab](res/mushroom/modeling_tab.png)
+-->
 
 * Select the default Cube
 * Press `X`, then `Enter` to delete the Cube
@@ -24,11 +27,13 @@ In this guide we'll make a low-poly mushroom like this:
 
 * Choose `Mesh` then `Cylinder`
 
+<!--
 > _Alternatively_ use the button on the toolbar:
 >
 > ![Add Cylinder Button](res/mushroom/add_cylinder_mesh_menu.png)
+-->
 
-* In the `Add Cylinder` options, set the following:
+* In the `Add Cylinder` options (bottom left corner), set the following:
   * Vertices: 5
   * Radius: 0.1m
   * Depth: 0.4m
@@ -45,6 +50,19 @@ It will be rather small, but should look something like this:
 >
 > Also, for the initial size (Radius, Depth), we're just going for something that's smaller than a typical character (1-2m tall).
 
+# Frame Selected
+
+* From the `View` menu, choose `Frame Selected` to zoom in on your newly created cylinder
+
+![Frame Selected](res/mushroom/frame_selected.png)
+
+* You may want to zoom out a bit. _Use the `Mouse Wheel` on Windows or `Cmd+Two Finger drag` on Mac._
+
+<!--
+> Having a shortcut for this is very handy. The default is the `Numpad .` key. If you don't have a numpad, you can set a different *Key binding* from the `Preferences`, `Keymap` menu. I'm using `F` on my keyboard.
+-->
+
+<!--
 # Local View
 
 * From the `View` menu, choose `Local View` and then `Toggle Local View` to zoom in on your newly created cylinder
@@ -55,7 +73,7 @@ It will be rather small, but should look something like this:
 >
 > Having a shortcut for this is very handy. The default is the `Numpad /` key. If you don't have a numpad, you can set a different *Key binding* from the `Preferences`, `Keymap` menu. I'm using `7` on my keyboard.
 
-* You may want to zoom out a bit. _Use the `Mouse Wheel` on Windows or `Cmd+Two Finger drag` on Mac._
+-->
 
 # Edit Mode
 
@@ -99,7 +117,7 @@ Don't worry if it don't turn exactly right on the first try. We'll tweak the sha
 
 ![Scale](res/mushroom/scale2.png)
 
-* Repeat **Extruding** and **Scaling** a 4 times to get something like this:
+* Repeat **Extruding** and **Scaling** 4 times to get something like this:
 
 ![Repeat 4 times](res/mushroom/repeat1.png)
 
