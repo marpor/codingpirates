@@ -11,6 +11,9 @@ We will use an awesome template from the Asset Library, made by [KenneyNL](https
 
 ![Asset Library, Kenney](res/assetlibrary_kenney.png)
 
+> If you don't get any results, you may need to check the `Community` under `Support`:
+> ![Community](res/assetlibrary_community.png)
+
 * Click ```Starter Kit 3D Platformer```
 * Press ```Download```
 
