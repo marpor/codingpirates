@@ -323,3 +323,5 @@ With something selected, make some changes:
 Assign different colors to different types of mushrooms.
 
 Export each muchroom in it's own file, or export clusters of mushrooms together.
+
+![Variety of Mushrooms](res/mushroom/variety.png)
