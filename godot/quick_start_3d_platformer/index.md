@@ -55,6 +55,7 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Export](../export.md) - export your game for sharing with others
 * [Going Fullscreen](fullscreen.md) - add a toggle for showing your game full screen
 * [Required Pickups](required_pickups.md) - required pickups to change levels
+* [Mouse Look](mouse_look.md) - how to enable mouse look and WASD movement
 
 # Tips
 
