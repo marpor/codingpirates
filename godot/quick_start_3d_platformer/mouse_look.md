@@ -1,6 +1,9 @@
-## Mouse Look
+---
+title: Mouse Look
+---
+# {{ page.title }}
 
-### Default game controls
+## Default game controls
 
 Even though you can move your played with WASD and look around with arrow keys, the way the look is organized is a bit different from regular 3rd person games.
 
@@ -25,7 +28,7 @@ With this organization, player's movement directions are always relative to the 
 
 ![image](https://github.com/oxeg/codingpirates/assets/2689981/f5652957-5caf-4f7e-b435-2ff00e894461)
 
-### Delete current camera
+## Delete current camera
 
 First, we need to delete currect camera and everything that's related to it.
 
@@ -45,7 +48,7 @@ movement_velocity = input * movement_speed * delta
 ...
 ```
 
-### Create camera attached to the player
+## Create camera attached to the player
 
 Now we need to create a new camera, that's attached to the player.
 
@@ -66,7 +69,7 @@ Now we need to create a new camera, that's attached to the player.
 ![image](https://github.com/oxeg/codingpirates/assets/2689981/fdb3ee63-e2b6-41f9-8ebc-bc37ce5634e6)
 *You can use these camera Position and Rotation values as an example*
 
-### Updating player controls
+## Updating player controls
 
 We have camera attached to the player, now we need to update the controls and enable mouse look.
 
@@ -176,7 +179,7 @@ func _input(event):
 
 4. Now if you click Save and Play - you should be able to play the game using WASD for movement and mouse look with Right Mouse Button pressed
 
-### Full content of the player script
+## Full content of the player script
 
 If you have any issues or errors, below you can find full `player.gd` script content
 
