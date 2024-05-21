@@ -183,10 +183,7 @@ func _input(event):
 
 If you have any issues or errors, below you can find full `player.gd` script content
 
-<details>
-  <summary>player script</summary>
-
-  ```gdscript
+```gdscript
 extends CharacterBody3D
 
 signal coin_collected
@@ -334,4 +331,3 @@ func collect_coin():
 	coin_collected.emit(coins)
 
   ```
-</details>
