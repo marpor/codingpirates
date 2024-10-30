@@ -52,10 +52,13 @@ For now, though, we'll focus our attention on the _3D viewport_.
 * [Menu Signs](menu_signs.md) - menus or just text when you walk up to signs, Roblox style
 * ["Autoload"](autoload.md) - keep track of coins and other things across levels
 * [Collision Masks](collision_masks.md) - make sure only the player can activate coins and flags
-* [Export](../export.md) - export your game for sharing with others
 * [Going Fullscreen](fullscreen.md) - add a toggle for showing your game full screen
 * [Required Pickups](required_pickups.md) - required pickups to change levels
 * [Mouse Look](mouse_look.md) - how to enable mouse look and WASD movement
+
+* [Export](../export.md) - export your game for sharing with others
+* [Setup GitHub Desktop](../github_desktop_setup.md) - to backup, share and/or collaborate
+* [Publish with GitHub Actions and Pages](../github-pages-workflow.md) - automatically on every change
 
 # Tips
 
