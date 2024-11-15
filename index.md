@@ -41,14 +41,18 @@ Templates / Demo Projects
 
 # Blender
 
-* [A Low-Poly Mushroom](blender/mushroom.md)
+## Beginner
 
-Recommended Tutorial videos:
+* [A Low-Poly Mushroom](blender/mushroom.md)
 
 * [Donut Tutorial](https://www.youtube.com/watch?v=B0J27sf9N1Y) 🔗🎬 (YouTube)
 * [Blender 4 for Absolute Beginners](https://www.youtube.com/watch?v=lLqep5Q4MiI&ab_channel=GrantAbbitt%28Gabbitt%29) 🔗🎬 (YouTube)
 * [More Grant Abbitts Tutorials](https://www.youtube.com/@grabbitt/playlists) 🔗🎬 (YouTube)
 * [CBailey's Tie Fighter Tutorial](https://www.youtube.com/watch?v=SVl_tlbGrh4&ab_channel=CBaileyFilm) 🔗🎬 (YouTube)
+
+## Intermediate
+
+* [6 Blender Hard-Surface Modeling Tricks I Wish I Knew Earlier](https://www.youtube.com/watch?v=Ml2t8uxPAQU&ab_channel=CGBoost)  🔗🎬 (YouTube)
 
 # Other
 
