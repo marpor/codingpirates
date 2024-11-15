@@ -43,6 +43,10 @@ Templates / Demo Projects
 
 * [A Low-Poly Mushroom](blender/mushroom.md)
 
+Recommended Tutorial videos:
+
+* [Grant Abbitts Tutorials](https://www.youtube.com/@grabbitt/playlists) 🔗🎬 (YouTube)
+* [CBailey's Tie Fighter Tutorial](https://www.youtube.com/watch?v=SVl_tlbGrh4&ab_channel=CBaileyFilm) 🔗🎬 (YouTube)
 
 Enjoy!
 
