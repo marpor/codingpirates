@@ -50,6 +50,10 @@ Recommended Tutorial videos:
 * [More Grant Abbitts Tutorials](https://www.youtube.com/@grabbitt/playlists) 🔗🎬 (YouTube)
 * [CBailey's Tie Fighter Tutorial](https://www.youtube.com/watch?v=SVl_tlbGrh4&ab_channel=CBaileyFilm) 🔗🎬 (YouTube)
 
+# Other
+
+I highly recommend watching Sebastian Lague's excellent [Coding Adventures](https://www.youtube.com/@SebastianLague) videos. He's exploring various topics using Unity, but the learnings and experiences are well worth a watch no matter what your preferred engine or programming language.
+
 Enjoy!
 
 /Marken
