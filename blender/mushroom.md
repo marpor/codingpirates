@@ -276,26 +276,6 @@ If you haven't already done this, now would be a very good time to save your Ble
 
 If this is the first save, Blender will ask for a name and location
 
-# Exporting
-
-To use your Mushroom in another application like Godot, you'll need to _export_ it.
-
-* From the `File` menu, choose `Export`, then `glTF 2.0 (.glb/.gltf)`:
-
-![Export glTF 2.0](res/mushroom/export_gltf.png)
-
-* Navigate to a suitable location for your exported file
-* Expand `Include`
-* Enable `Export Selected` (assuming you've still got your Mushroom selected)
-* Expand `Geometry` and `Mesh`
-* Enable `Apply Modifiers`
-* Type a name of your liking in the name field
-
-![Export glTF Dialog](res/mushroom/export_gltf_dialog.png)
-
-* Press `Export glTF 2.0`
-* Enjoy your **glTF** file
-
 # Variety
 
 * Make sure you're in *Object Mode*
@@ -325,3 +305,37 @@ Assign different colors to different types of mushrooms.
 Export each muchroom in it's own file, or export clusters of mushrooms together.
 
 ![Variety of Mushrooms](res/mushroom/variety.png)
+
+# Export Rendering
+
+If you want to save a nice image of your mushroom scene, you can *Render* it.
+
+* Press `F12` to open the Render window
+* Wait for the render to finish
+* Press `Ctrl+S` to save your image as a `.png` file
+
+If you don't have an F12 key on your keyboard, you can:
+* Press the `Rendering` tab at the top of the menu
+* From the `Render` menu choose `Render Image`
+
+# Exporting for Game Engines
+
+To use your Mushroom in another application like Unity or Godot, you'll need to _export_ it.
+
+* From the `File` menu, choose `Export`
+* For Unity, pick `FBX (.fbx)`
+* For Godot, pick `glTF 2.0 (.glb/.gltf)`
+
+![Export glTF 2.0](res/mushroom/export_gltf.png)
+
+* Navigate to a suitable location for your exported file
+* Expand `Include`
+* Enable `Selected Objects` (assuming you've still got your Mushroom selected)
+* Expand `Data` (for glTF) or `Geometry` (for FBX)
+* Expand `Mesh`
+* Enable `Apply Modifiers`
+* Type a name of your liking in the name field
+
+![Export glTF Dialog](res/mushroom/export_gltf_dialog.png)
+
+* Press `Export glTF 2.0` or `Export FBX`
