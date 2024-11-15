@@ -45,7 +45,9 @@ Templates / Demo Projects
 
 Recommended Tutorial videos:
 
-* [Grant Abbitts Tutorials](https://www.youtube.com/@grabbitt/playlists) 🔗🎬 (YouTube)
+* [Donut Tutorial](https://www.youtube.com/watch?v=B0J27sf9N1Y) 🔗🎬 (YouTube)
+* [Blender 4 for Absolute Beginners](https://www.youtube.com/watch?v=lLqep5Q4MiI&ab_channel=GrantAbbitt%28Gabbitt%29) 🔗🎬 (YouTube)
+* [More Grant Abbitts Tutorials](https://www.youtube.com/@grabbitt/playlists) 🔗🎬 (YouTube)
 * [CBailey's Tie Fighter Tutorial](https://www.youtube.com/watch?v=SVl_tlbGrh4&ab_channel=CBaileyFilm) 🔗🎬 (YouTube)
 
 Enjoy!
