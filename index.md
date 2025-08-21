@@ -39,6 +39,10 @@ Templates / Demo Projects
 
 <!-- [Emoji Catcher Tutorial](emoji-catcher) -->
 
+# Shaders
+
+* [Painting with Math](shaders/painting_with_math_sdf/index.md)
+
 # Blender
 
 ## Beginner
