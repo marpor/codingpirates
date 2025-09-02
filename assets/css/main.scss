@@ -69,6 +69,7 @@ main > p > video:only-child {
 }
 
 /* This matches the enclosing p for the images and videos with no surrounding text. */
+main > p:has(> iframe:only-child),
 main > p:has(> img:only-child),
 main > p:has(> video:only-child) {
     background: black;
@@ -77,6 +78,14 @@ main > p:has(> video:only-child) {
     border-right: none;
     border-left: none;
     padding: 0 1em;
+}
+
+iframe {
+  display: block;
+  margin: 1.5em auto;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  background: black;
 }
 
 p {
