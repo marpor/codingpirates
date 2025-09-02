@@ -27,7 +27,16 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 }
 ```
 
+To see your changes, press the little arrow in the lower-left corner, or press `Alt+Enter`.
+![Compile Shader](res/compile_button.png)
 
+It should now look like this:
+
+<iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe>
+
+![Preview](res/part00_hello_gpu/image.png)
+
+Very red, but not very exciting yet. Let's keep going...
 
 ### Further reading
 - [The Book of Shaders](https://thebookofshaders.com/)

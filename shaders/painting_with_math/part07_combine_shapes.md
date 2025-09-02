@@ -20,12 +20,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     float aspect = iResolution.x / iResolution.y;
     p.x *= aspect;
 
-    float sd1 = sdfCircle(p, vec2(-0.4, 0.0), 0.35);
-    float sd2 = sdfCircle(p, vec2( 0.4, 0.0), 0.35);
+    float sd1 = sdfCircle(p, vec2(-0.4, 0.0), 0.5);
+    float sd2 = sdfCircle(p, vec2( 0.4, 0.0), 0.5);
 
     float sd   = min(sd1, sd2);           // union
-    float edge = smoothstep(0.0, 0.01, sd);
-    fragColor  = vec4(vec3(1.0 - edge), 1.0);
+    float edge = smoothstep(1.0, 0.01, sd);
+    fragColor  = vec4(vec3(edge), 1.0);
 }
 ```
 

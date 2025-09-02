@@ -41,7 +41,7 @@ Templates / Demo Projects
 
 # Shaders
 
-* [Painting with Math](shaders/painting_with_math_sdf/index.md)
+* [Painting with Math](shaders/painting_with_math/index.md)
 
 # Blender
 
