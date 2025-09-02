@@ -13,11 +13,10 @@ title: Part 1 — Normalize coordinates
 
 ```glsl
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-    vec2 uv = fragCoord / iResolution.xy; // normalize pixels into [0,1]^2
-    fragColor = vec4(uv.x, uv.x, uv.x, 1.0); // left→right grey ramp
+    vec2 uv = fragCoord / iResolution.xy;     // normalize pixels into 0-1 coordinates
+    fragColor = vec4(uv.x, uv.x, uv.x, 1.0);  // left to right grey gradient
 }
 ```
-
 
 ### Further reading
 - [The Book of Shaders — Uniforms](https://thebookofshaders.com/02/)

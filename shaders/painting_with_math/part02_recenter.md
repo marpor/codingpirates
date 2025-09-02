@@ -23,7 +23,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 }
 ```
 
-> **Math note:** Recenering is an *affine transform*: scale by 2 (stretch [0,1] to [0,2]) then subtract 1 (shift to [-1,1]).
+> **Math note:** Recentering is an *affine transformatio*: scale by 2 (stretch [0,1] to [0,2]) then subtract 1 (shift to [-1,1]).
 
 
 ### Further reading
