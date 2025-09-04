@@ -3,23 +3,30 @@ title: Part 1 — Normalize coordinates
 ---
 # {{ page.title }}
 
-**New concept:** **Normalization**: convert pixels → unit square.
-**Why:** Makes math **resolution-independent** and easier to reason about.
+Pixels arrive in **screen coordinates** (`fragCoord`) like `(x, y)` in pixels. To make math easier, we’ll convert to a centered, square-ish space called **uv**:
 
-* `uv = fragCoord / iResolution.xy`
-* Bottom-left ≈ (0,0), top-right ≈ (1,1), center ≈ (0.5,0.5)
+* origin `(0,0)` in the **center**
+* `x` grows right, `y` grows up
+* both roughly in the range `[-1, +1]`
 
-**What changed:** Compute `uv` and visualize a gradient.
+Paste this:
 
 ```glsl
-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-    vec2 uv = fragCoord / iResolution.xy;     // normalize pixels into 0-1 coordinates
-    fragColor = vec4(uv.x, uv.x, uv.x, 1.0);  // left to right grey gradient
+void mainImage(out vec4 fragColor, in vec2 fragCoord)
+{
+    // Normalize to a centered, aspect-correct coordinate system
+    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
+
+    // Visualize axes: X to red, Y to green (mapped from [-1,1] to [0,1])
+    vec3 col = vec3(uv*0.5 + 0.5, 0.0);
+
+    fragColor = vec4(col, 1.0);
 }
 ```
 
-### Further reading
-- [The Book of Shaders — Uniforms](https://thebookofshaders.com/02/)
-- [vec2 reference](https://thebookofshaders.com/glossary/?search=vec2)
+**What’s new vs Part 0**
 
-[Next: Part 2 — Recenter](part02_recenter.md)
+* Introduced a centered `uv` space.
+* Showed a quick gradient to prove it works.
+
+[Next: Part 2 — A single circle](part02_single_circle.md)

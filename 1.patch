@@ -1,0 +1,1000 @@
+diff --git a/shaders/painting_with_math/index.md b/shaders/painting_with_math/index.md
+index c61ce7a48aaf9f11207ee01327bcbcd879dccbee..33fad687ec05af92c3859e6764f0557c858aadfe 100644
+--- a/shaders/painting_with_math/index.md
++++ b/shaders/painting_with_math/index.md
+@@ -1,75 +1,64 @@
+ ---
+ title: Shaders Workshop - Painting with Math
+ ---
+ # {{ page.title }}
+ 
+-**Audience:** Ages 13–17 with basic coding experience  
+-**Tool:** [ShaderToy](https://www.shadertoy.com) (fragment shader only)  
+-**Goal:** Build up, one concept at a time, from a single circle to an animated, glowing, colorful scene - while learning the math behind it (UVs, Pythagoras, SDFs, mixing, etc.).
++**Audience:** Ages 13–17 with basic coding experience
++**Tool:** [ShaderToy](https://www.shadertoy.com) (fragment shader only)
++**Goal:** Build up, one concept at a time, from a single circle to an animated, glowing, colorful scene - while learning the math behind it.
+ 
+ # Quick Start
+ 
+ 1. Open [ShaderToy](https://www.shadertoy.com)
+ 2. Click **New** at the top-right corner.
+ 
+ You'll start out with the code for a very simple shader, but we'll replace that with our own - even simpler - code, and build it out little by little.
+ 
+ # Step by Step
+ 
+ - [Part 0 - Hello, GPU](part00_hello_gpu.md)
+ - [Part 1 - Normalize coordinates](part01_normalize_coordinates.md)
+-- [Part 2 - Recenter](part02_recenter.md)
+-- [Part 3 - Distance (Pythagoras) draws a circle](part03_distance.md)
+-- [Part 4 - Antialias with smoothstep](part04_antialias_smoothstep.md)
+-- [Part 5 - SDF (Signed Distance Field)](part05_sdf.md)
+-- [Part 6 - Aspect ratio](part06_aspect_ratio.md)
+-- [Part 7 - Combine shapes](part07_combine_shapes.md)
+-- [Part 8 - Animation](part08_animation.md)
+-- [Part 9 - Color mixing](part09_color_mixing.md)
+-- [Part 10 - Glow](part10_glow.md)
+-- [Part 11 - Smooth union](part11_smooth_union.md)
+-- [Part 12 - Interactivity](part12_interactivity.md)
++- [Part 2 - A single circle](part02_single_circle.md)
++- [Part 3 - Soft edges (sdf + smoothstep)](part03_soft_edges.md)
++- [Part 4 - Simple animation](part04_animation.md)
++- [Part 5 - Many circles (loops)](part05_many_circles.md)
++- [Part 6 - Color palettes](part06_color_palettes.md)
++- [Part 7 - Final shader (polish + parameters)](part07_final_shader.md)
++- [Part 8 - Extensions (optional)](part08_extensions.md)
+ 
+ # Math & Concept Cheatsheet
+ 
+-* **Normalize pixels:** `uv = fragCoord / iResolution.xy`
+-  *Reason:* resolutions differ; UVs don’t.
+-* **Recenter:** `p = uv*2 - 1` → origin at screen center
+-  *Reason:* geometry is symmetric around (0,0).
+-* **Aspect fix:** `p.x *= iResolution.x / iResolution.y`
+-  *Reason:* prevents circles turning into ellipses on wide screens.
+-* **Distance (Pythagoras):** `length(p) = sqrt(x² + y²)`
+-  *Reason:* distance to center = circle test vs radius.
+-* **Circle equation:** `x² + y² = r²` ⇔ `length(p) = r`
+-* **SDF circle:** `sd = length(p - center) - radius`
+-  *Sign:* sd<0 inside, sd=0 edge, sd>0 outside.
+-* **Edges:** `step` (hard), `smoothstep` (soft & anti-aliased).
+-* **Booleans:** union `min`, intersection `max`, difference `max(a,-b)`.
+-* **Smooth union:** `smin(a,b,k)` for blobby blends.
+-* **Animation:** `cos(t), sin(t)` gives circular motion; tweak phase/speed.
+-* **Color:** `mix(a,b,t)` for gradients & tints; `t` from space (`uv`) or time.
+-* **Glow:** falloff `exp(-k * max(sd,0))` → halo controlled by `k`.
++* **Centered UV:** `uv = (fragCoord*2.0 - iResolution.xy)/iResolution.y`
++  *Reason:* resolution-independent, origin at center.
++* **Circle distance:** `length(uv - center)`
++  *Reason:* points with equal distance form a circle.
++* **Soft edges:** `smoothstep` vs `step`
++  *Reason:* anti-aliased transitions.
++* **Signed ring distance:** `sd = abs(dist - radius)`
++  *Reason:* fade based on distance from ideal circle edge.
++* **Animation:** drive values with `iTime`, `sin`, `cos`.
++* **Loops:** `for (float i = 0.0; i < N; i++)` to repeat shapes.
++* **Color:** cosine palette `a + cos(3.0*(a*t + b))`.
+ 
+ # Prompt Ideas
+ 
+-* Change radius/speeds; add a third circle.
+-* Swap `min` ↔ `smin` and compare silhouettes.
+-* Color by `uv.y` or by `sd` (e.g., heatmaps).
+-* Make a pulsing circle: use `r = 0.3 + 0.05*sin(iTime*3.0)`.
+-* Tile space with `mod(p, cellSize)` for patterns.
++* Change radius/speeds; add more circles.
++* Swap palette parameters for different moods.
++* Animate color separately from motion.
++* Tie motion to mouse input.
+ 
+ # Troubleshooting
+ 
+-* **Squashed circles:** forgot the aspect fix → apply `p.x *= iResolution.x / iResolution.y`.
+-* **Aliasing/jagged edges:** increase the `blur` range in `smoothstep`.
+-* **Nothing shows:** check your value ranges; try visualizing intermediates (e.g., output `vec3(uv,0)` or `vec3(sd)` scaled).
++* **Aliasing/jagged edges:** increase the `smoothstep` width.
++* **Nothing shows:** check your value ranges; try visualizing intermediates.
++* **Too slow:** reduce circle count or blur radius.
+ 
+ # Optional Next Steps
+ 
+-* Add other SDF shapes (box, rounded box, line, ring), morph between them.
+-* Introduce `max` for intersections and sculpt interesting forms.
+-* Use `fract`/`mod` to repeat space for kaleidoscopic patterns.
++* Add other SDF shapes (box, line, ring) and animate them.
++* Experiment with post-process blur or feedback effects.
++* Use `fract`/`mod` to repeat space for patterns.
+ 
+ ---
+ 
+ *Have fun - you’re literally painting with equations, at GPU speed!*
+diff --git a/shaders/painting_with_math/part01_normalize_coordinates.md b/shaders/painting_with_math/part01_normalize_coordinates.md
+index 1aeeb71cd03219a590c43e5b74e0b773bfd26a58..528473deea544e62b75de806f12e48054df154d7 100644
+--- a/shaders/painting_with_math/part01_normalize_coordinates.md
++++ b/shaders/painting_with_math/part01_normalize_coordinates.md
+@@ -1,25 +1,32 @@
+ ---
+ title: Part 1 — Normalize coordinates
+ ---
+ # {{ page.title }}
+ 
+-**New concept:** **Normalization**: convert pixels → unit square.
+-**Why:** Makes math **resolution-independent** and easier to reason about.
++Pixels arrive in **screen coordinates** (`fragCoord`) like `(x, y)` in pixels. To make math easier, we’ll convert to a centered, square-ish space called **uv**:
+ 
+-* `uv = fragCoord / iResolution.xy`
+-* Bottom-left ≈ (0,0), top-right ≈ (1,1), center ≈ (0.5,0.5)
++* origin `(0,0)` in the **center**
++* `x` grows right, `y` grows up
++* both roughly in the range `[-1, +1]`
+ 
+-**What changed:** Compute `uv` and visualize a gradient.
++Paste this:
+ 
+ ```glsl
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv = fragCoord / iResolution.xy;     // normalize pixels into 0-1 coordinates
+-    fragColor = vec4(uv.x, uv.x, uv.x, 1.0);  // left to right grey gradient
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    // Normalize to a centered, aspect-correct coordinate system
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    // Visualize axes: X to red, Y to green (mapped from [-1,1] to [0,1])
++    vec3 col = vec3(uv*0.5 + 0.5, 0.0);
++
++    fragColor = vec4(col, 1.0);
+ }
+ ```
+ 
+-### Further reading
+-- [The Book of Shaders — Uniforms](https://thebookofshaders.com/02/)
+-- [vec2 reference](https://thebookofshaders.com/glossary/?search=vec2)
++**What’s new vs Part 0**
++
++* Introduced a centered `uv` space.
++* Showed a quick gradient to prove it works.
+ 
+-[Next: Part 2 — Recenter](part02_recenter.md)
++[Next: Part 2 — A single circle](part02_single_circle.md)
+diff --git a/shaders/painting_with_math/part02_recenter.md b/shaders/painting_with_math/part02_recenter.md
+deleted file mode 100644
+index 4d0f3ec9d74bd42904c93467b6facd85d1062c59..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part02_recenter.md
++++ /dev/null
+@@ -1,33 +0,0 @@
+----
+-title: Part 2 — Recenter
+----
+-# {{ page.title }}
+-
+-**New concept:** Shift to a symmetric math space with the origin at screen center.
+-**Why:** Most geometry (circles, distances) is cleaner around (0,0).
+-
+-* `p = uv * 2 - 1` maps [0,1] → [-1,1]; center becomes (0,0)
+-
+-**What changed:** Introduce `p` and draw simple axis tints.
+-
+-```glsl
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 p = fragCoord / iResolution.xy; 
+-    p  *= 2.0 - 1.0; // center is now (0,0)
+-
+-    // Visual hint: tint blue where x>0, red where y>0
+-    vec3 col = vec3(0.0);
+-    col.b += smoothstep(0.0, 0.01, p.x); // +x
+-    col.r += smoothstep(0.0, 0.01, p.y); // +y
+-    fragColor = vec4(col, 1.0);
+-}
+-```
+-
+-> **Math note:** Recentering is an *affine transformatio*: scale by 2 (stretch [0,1] to [0,2]) then subtract 1 (shift to [-1,1]).
+-
+-
+-### Further reading
+-- [The Book of Shaders — Shaping functions](https://thebookofshaders.com/05/)
+-- [Wikipedia — Affine transformation](https://en.wikipedia.org/wiki/Affine_transformation)
+-
+-[Next: Part 3 — Distance (Pythagoras) draws a circle](part03_distance.md)
+diff --git a/shaders/painting_with_math/part02_single_circle.md b/shaders/painting_with_math/part02_single_circle.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..4448a04fbca4ba4d78f6a3169a4f1d0cf892b969
+--- /dev/null
++++ b/shaders/painting_with_math/part02_single_circle.md
+@@ -0,0 +1,34 @@
++---
++title: Part 2 — A single circle
++---
++# {{ page.title }}
++
++A circle is just “all points at distance `r` from a center”. Distance in 2D is `length(uv - center)`.
++
++```glsl
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    // Circle parameters
++    vec2  center = vec2(0.0, 0.0); // center at origin
++    float radius = 0.6;
++
++    // Distance from this pixel to the circle center
++    float dist = length(uv - center);
++
++    // 1.0 inside the circle, 0.0 outside
++    float c = step(dist, radius);
++
++    // White circle on black
++    vec3 col = vec3(c);
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Introduced a **hard-edge** circle via `step(dist, radius)`.
++
++[Back: Part 1 — Normalize coordinates](part01_normalize_coordinates.md) • [Next: Part 3 — Soft edges (sdf + smoothstep)](part03_soft_edges.md)
+diff --git a/shaders/painting_with_math/part03_distance.md b/shaders/painting_with_math/part03_distance.md
+deleted file mode 100644
+index 91de7517b09cf8782194df9891c6ba0f0f63fc41..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part03_distance.md
++++ /dev/null
+@@ -1,32 +0,0 @@
+----
+-title: Part 3 — Distance (Pythagoras) draws a circle
+----
+-# {{ page.title }}
+-
+-**New concept:** Distance to the origin via **Pythagoras**:
+-`length(p) = sqrt(p.x² + p.y²)`
+-
+-* Circle equation: **x² + y² = r²**
+-* Therefore, a point is **inside** the circle if `x² + y² < r²` (equivalently `length(p) < r`).
+-
+-**What changed:** Threshold the distance for a hard-edged disc.
+-
+-```glsl
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 p = fragCoord / iResolution.xy;
+-    p *= 2.0 - 1.0;
+-
+-    float r = 0.5;             // radius in [-1,1] space
+-    float d = length(p);       // sqrt(x^2 + y^2)
+-
+-    float inside = step(d, r); // 1 inside, 0 outside
+-    fragColor = vec4(vec3(inside), 1.0);
+-}
+-```
+-
+-
+-### Further reading
+-- [The Book of Shaders — Shapes](https://thebookofshaders.com/03/)
+-- [GLSL reference for length](https://registry.khronos.org/OpenGL-Refpages/gl4/html/length.xhtml)
+-
+-[Next: Part 4 — Antialias with smoothstep](part04_antialias_smoothstep.md)
+diff --git a/shaders/painting_with_math/part03_soft_edges.md b/shaders/painting_with_math/part03_soft_edges.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..e5565e88fdf5de3b74042f6e8a22316a87a0d4c0
+--- /dev/null
++++ b/shaders/painting_with_math/part03_soft_edges.md
+@@ -0,0 +1,37 @@
++---
++title: Part 3 — Soft edges (sdf + smoothstep)
++---
++# {{ page.title }}
++
++Hard edges alias. Let’s build a tiny “soft edge” with an **SDF** (signed distance function) idea for a circle:
++`sd = abs(dist - radius)` is small near the ring. Then we smooth it.
++
++```glsl
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    vec2  center = vec2(0.0);
++    float radius = 0.6;
++
++    float dist = length(uv - center);
++
++    // How far from the ideal ring (distance == radius)?
++    float sd = abs(dist - radius);
++
++    // Smooth ring: c≈1 at circle edge, fades away with width 'smoothingRadius'
++    float smoothingRadius = 0.01;      // try 0.02, 0.05, ...
++    float c = smoothstep(smoothingRadius, 0.0, sd);
++
++    vec3 col = vec3(c);
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Switched from `step` to **`smoothstep`** for anti-aliased edges.
++* Used `sd = abs(dist - radius)` to make a **ring**. (If you want a filled circle, use `c = 1.0 - smoothstep(radius, radius + smoothingRadius, dist);`)
++
++[Back: Part 2 — A single circle](part02_single_circle.md) • [Next: Part 4 — Simple animation](part04_animation.md)
+diff --git a/shaders/painting_with_math/part04_animation.md b/shaders/painting_with_math/part04_animation.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..fd6b8e1f7708beb054cc2c9654768982ea458dd9
+--- /dev/null
++++ b/shaders/painting_with_math/part04_animation.md
+@@ -0,0 +1,35 @@
++---
++title: Part 4 — Simple animation
++---
++# {{ page.title }}
++
++Let’s move the circle with time (`iTime`, seconds). Sinusoidal motion keeps values in `[-1, 1]`.
++
++```glsl
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    float t = iTime * 0.75;            // animation speed
++
++    // Move the center along a lissajous-like path
++    vec2 center = vec2(sin(t*1.7), cos(t*1.1)) * 0.4;
++    float radius = 0.6;
++
++    float dist = length(uv - center);
++    float sd   = abs(dist - radius);
++
++    float smoothingRadius = 0.01;
++    float c = smoothstep(smoothingRadius, 0.0, sd);
++
++    vec3 col = vec3(c);
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Introduced **time** to animate position.
++
++[Back: Part 3 — Soft edges](part03_soft_edges.md) • [Next: Part 5 — Many circles (loops)](part05_many_circles.md)
+diff --git a/shaders/painting_with_math/part04_antialias_smoothstep.md b/shaders/painting_with_math/part04_antialias_smoothstep.md
+deleted file mode 100644
+index b1488ccd756ef6fa592aa45aaa75e70ac7d8a9c8..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part04_antialias_smoothstep.md
++++ /dev/null
+@@ -1,32 +0,0 @@
+----
+-title: Part 4 — Antialias with `smoothstep`
+----
+-# {{ page.title }}
+-
+-**New concept:** Replace a hard threshold with a **soft transition**.
+-`smoothstep(a,b,x)` smoothly maps x from 0→1 over [a,b].
+-
+-**What changed:** Feather the rim by blending around the radius.
+-
+-```glsl
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv = fragCoord / iResolution.xy;
+-    vec2 p  = uv * 2.0 - 1.0;
+-
+-    float r    = 0.5;
+-    float blur = 0.01;                  // softness width
+-    float d    = length(p);
+-
+-    float edge = smoothstep(r, r + blur, d); // 0 inside, 1 outside
+-    fragColor  = vec4(vec3(1.0 - edge), 1.0); // white disc, soft rim
+-}
+-```
+-
+-> **Math note:** `smoothstep` is a cubic polynomial with zero slope at `a` and `b`, reducing aliasing.
+-
+-
+-### Further reading
+-- [The Book of Shaders — Shaping functions](https://thebookofshaders.com/05/)
+-- [GLSL reference for smoothstep](https://registry.khronos.org/OpenGL-Refpages/gl4/html/smoothstep.xhtml)
+-
+-[Next: Part 5 — SDF (Signed Distance Field)](part05_sdf.md)
+diff --git a/shaders/painting_with_math/part05_many_circles.md b/shaders/painting_with_math/part05_many_circles.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..3ce177f89b65229949e13d8950b69ac25a8482ca
+--- /dev/null
++++ b/shaders/painting_with_math/part05_many_circles.md
+@@ -0,0 +1,49 @@
++---
++title: Part 5 — Many circles (loops)
++---
++# {{ page.title }}
++
++Now we’ll draw **N** circles in a loop, offsetting each center and shrinking the radius a bit.
++
++```glsl
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    float t = iTime * 0.5;
++
++    vec3 col = vec3(0.0);              // accumulate here
++
++    const float N = 12.0;              // number of circles
++    for (float i = 0.0; i < N; i++)
++    {
++        // Each circle gets a different center and radius
++        vec2 center = vec2(
++            sin(3.1*i + 0.8*t),
++            cos(2.3*i - 0.6*t)
++        ) * 0.7;
++
++        float radius = 1.2 - i/(N*2.0);
++
++        float dist = length(uv - center);
++        float sd   = abs(dist - radius);
++
++        float smoothingRadius = 0.02;
++        float c = smoothstep(smoothingRadius, 0.0, sd);
++
++        // Add brighter contribution for stronger circles
++        col += vec3(pow(c, 2.0));
++    }
++
++    col /= N;                           // average
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Introduced a **for-loop** to place many circles.
++* **Accumulate** contributions and average.
++
++[Back: Part 4 — Animation](part04_animation.md) • [Next: Part 6 — Color palettes](part06_color_palettes.md)
+diff --git a/shaders/painting_with_math/part05_sdf.md b/shaders/painting_with_math/part05_sdf.md
+deleted file mode 100644
+index fd51c0c2bca23fa33a656b63c86ceb56e469f8c6..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part05_sdf.md
++++ /dev/null
+@@ -1,38 +0,0 @@
+----
+-title: Part 5 — SDF (Signed Distance Field)
+----
+-# {{ page.title }}
+-
+-**New concept:** An **SDF** returns **signed** distance to a shape:
+-negative inside, zero on the boundary, positive outside.
+-
+-* For a circle centered at `c` with radius `r`:
+-  `sd = length(p - c) - r`
+-
+-**What changed:** Use an explicit SDF function.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r) {
+-    return length(p - c) - r; // <0 inside, =0 edge, >0 outside
+-}
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv = fragCoord / iResolution.xy;
+-    vec2 p  = uv * 2.0 - 1.0;
+-
+-    float sd   = sdfCircle(p, vec2(0.0), 0.5);
+-    float blur = 0.01;
+-
+-    float edge = smoothstep(0.0, blur, sd); // soften around sd=0
+-    fragColor  = vec4(vec3(1.0 - edge), 1.0);
+-}
+-```
+-
+-> **Why SDFs rock:** One formula gives you inside/outside, outlines, soft edges, morphing, boolean ops (union/intersection), glow, and more — all from distance.
+-
+-
+-### Further reading
+-- [Inigo Quilez — 2D distance functions](https://iquilezles.org/articles/distfunctions2d/)
+-- [GLSL reference for length](https://registry.khronos.org/OpenGL-Refpages/gl4/html/length.xhtml)
+-
+-[Next: Part 6 — Aspect ratio](part06_aspect_ratio.md)
+diff --git a/shaders/painting_with_math/part06_aspect_ratio.md b/shaders/painting_with_math/part06_aspect_ratio.md
+deleted file mode 100644
+index 345236be6393f1bec3bb10641d1085f63843b65f..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part06_aspect_ratio.md
++++ /dev/null
+@@ -1,30 +0,0 @@
+----
+-title: Part 6 — Aspect ratio
+----
+-# {{ page.title }}
+-
+-**New concept:** Fix stretch from non-square viewports: scale x by `aspect = width/height`.
+-
+-**What changed:** Apply aspect to the *math* space `p`.
+-
+-```glsl
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect; // prevent ellipse distortion
+-
+-    float sd   = length(p) - 0.5;
+-    float edge = smoothstep(0.0, 0.01, sd);
+-    fragColor  = vec4(vec3(1.0 - edge), 1.0);
+-}
+-```
+-
+-> **Math note:** This is a linear scaling in x; conceptually, you’re undoing the screen’s horizontal stretch in your compute space.
+-
+-
+-### Further reading
+-- [The Book of Shaders — Shapes](https://thebookofshaders.com/03/)
+-- [Wikipedia — Aspect ratio](https://en.wikipedia.org/wiki/Aspect_ratio_(image))
+-
+-[Next: Part 7 — Combine shapes](part07_combine_shapes.md)
+diff --git a/shaders/painting_with_math/part06_color_palettes.md b/shaders/painting_with_math/part06_color_palettes.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..86894b0a7611ec43541f4b010d89328200a46d0a
+--- /dev/null
++++ b/shaders/painting_with_math/part06_color_palettes.md
+@@ -0,0 +1,54 @@
++---
++title: Part 6 — Color palettes
++---
++# {{ page.title }}
++
++We’ll color each circle using a compact cosine palette. Small changes in `t` produce smooth, rich colors.
++
++```glsl
++// Cosine palette (Inigo Quilez–style)
++vec3 palette(float t)
++{
++    vec3 a = vec3(1.0);
++    vec3 b = vec3(0.123, 0.456, 0.789);
++    return a + cos(3.0 * (a * t + b));
++}
++
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++    float t = iTime * 0.25;            // slower time for color
++
++    vec3 col = vec3(0.0);
++
++    const float N = 12.0;
++    for (float i = 0.0; i < N; i++)
++    {
++        vec2 center = vec2(
++            sin(3.1*i + 0.8*t),
++            cos(2.3*i - 0.6*t)
++        ) * 0.7;
++
++        float radius = 1.2 - i/(N*2.0);
++        float dist   = length(uv - center);
++        float sd     = abs(dist - radius);
++
++        float smoothingRadius = 0.02;
++        float c = smoothstep(smoothingRadius, 0.0, sd);
++
++        // Color per circle; pow adds contrast
++        col += pow(c*1.1, 3.0) * palette(t + i*0.07);
++    }
++
++    col /= N;
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Added a **palette** function and mixed color per-circle.
++* Used **`pow`** to boost contrast.
++
++[Back: Part 5 — Many circles](part05_many_circles.md) • [Next: Part 7 — Final shader polish](part07_final_shader.md)
+diff --git a/shaders/painting_with_math/part07_combine_shapes.md b/shaders/painting_with_math/part07_combine_shapes.md
+deleted file mode 100644
+index fa98b5246d3d284487db858fa4212627bb729f3d..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part07_combine_shapes.md
++++ /dev/null
+@@ -1,37 +0,0 @@
+----
+-title: Part 7 — Combine shapes
+----
+-# {{ page.title }}
+-
+-**New concept:** **Boolean ops** on SDFs:
+-
+-* Union: `min(sd1, sd2)`
+-* Intersection: `max(sd1, sd2)`
+-* Difference: `max(sd1, -sd2)`
+-
+-**What changed:** Two circles → union via `min`.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect;
+-
+-    float sd1 = sdfCircle(p, vec2(-0.4, 0.0), 0.5);
+-    float sd2 = sdfCircle(p, vec2( 0.4, 0.0), 0.5);
+-
+-    float sd   = min(sd1, sd2);           // union
+-    float edge = smoothstep(1.0, 0.01, sd);
+-    fragColor  = vec4(vec3(edge), 1.0);
+-}
+-```
+-
+-
+-### Further reading
+-- [Inigo Quilez — Distance functions](https://iquilezles.org/articles/distfunctions/)
+-- [GLSL reference for min/max](https://registry.khronos.org/OpenGL-Refpages/gl4/html/min.xhtml)
+-
+-[Next: Part 8 — Animation](part08_animation.md)
+diff --git a/shaders/painting_with_math/part07_final_shader.md b/shaders/painting_with_math/part07_final_shader.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..987d8dec7c0a79e74a8659b82c9e1f91571954aa
+--- /dev/null
++++ b/shaders/painting_with_math/part07_final_shader.md
+@@ -0,0 +1,68 @@
++---
++title: Part 7 — Final shader (polish + parameters)
++---
++# {{ page.title }}
++
++We’ll crank up the count, tune motion via incommensurate frequencies, and match the target structure.
++
++```glsl
++// Smooth cosine palette: returns a nice RGB for input t
++vec3 palette(float t)
++{
++    vec3 a = vec3(1.0);
++    vec3 b = vec3(0.123, 0.456, 0.789);
++    return a + cos(3.0 * (a * t + b));
++}
++
++void mainImage(out vec4 fragColor, in vec2 fragCoord)
++{
++    // Centered, aspect-correct coordinates
++    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
++
++    // Slow global time for motion and color
++    float t = iTime * 0.125;
++
++    // Accumulated color
++    vec3 col = vec3(0.0);
++
++    // Circle count
++    const float N = 15.0;
++    for (float i = 0.0; i < N; i++)
++    {
++        // Move center around, offset by some multiple of i
++        vec2 center = vec2(
++            sin(53.0*i + 0.15*t*i),
++            sin(21.0*i - 0.52*t*i)
++        );
++
++        // Distance from current pixel to this circle's center
++        float dist = length(uv - center);
++
++        // Make radius a bit smaller for each circle
++        float radius = 1.5 - i/(N*3.0);
++
++        // Signed Distance (ring distance)
++        float sd = abs(dist - radius);
++
++        // Smoothen circle (bigger width fits our scale)
++        float smoothingRadius = 0.75;
++        float c = smoothstep(smoothingRadius, 0.0, sd);
++
++        // Pick a color using palette, and use pow for increased contrast
++        col += pow(1.25*c, 5.0) * palette(t * i / 28.0);
++    }
++
++    // Average contributions
++    col /= N;
++
++    fragColor = vec4(col, 1.0);
++}
++```
++
++**What’s new**
++
++* Increased **N** and used **incommensurate frequencies** for richer motion.
++* Scaled **smoothing** to the scene and boosted contrast with `pow`.
++* Final **palette** timing ties color to circle index for variety.
++
++[Back: Part 6 — Color palettes](part06_color_palettes.md) • [Next: Part 8 — Extensions (optional)](part08_extensions.md)
+diff --git a/shaders/painting_with_math/part08_animation.md b/shaders/painting_with_math/part08_animation.md
+deleted file mode 100644
+index 0bf0b2a8e76b4dd491e89f218e39c66eacf83102..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part08_animation.md
++++ /dev/null
+@@ -1,38 +0,0 @@
+----
+-title: Part 8 — Animation
+----
+-# {{ page.title }}
+-
+-**New concept:** Animate positions over time with sine/cosine.
+-**Why:** `sin`/`cos` give smooth periodic motion (circles/ellipses/Lissajous).
+-
+-**What changed:** Circle centers move with time.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect;
+-
+-    vec2 c1 = vec2(-0.3 + 0.25*cos(iTime*0.8),  0.20 + 0.20*sin(iTime*0.7));
+-    vec2 c2 = vec2( 0.3 + 0.25*sin(iTime*0.9), -0.20 + 0.20*cos(iTime*0.6));
+-
+-    float sd = min(sdfCircle(p, c1, 0.35),
+-                   sdfCircle(p, c2, 0.35));
+-
+-    float edge = smoothstep(0.0, 0.01, sd);
+-    fragColor  = vec4(vec3(1.0 - edge), 1.0);
+-}
+-```
+-
+-> **Math note:** `(cos t, sin t)` traces a unit circle; scaling components gives ellipses; using different speeds/phases creates interesting paths.
+-
+-
+-### Further reading
+-- [The Book of Shaders — Time](https://thebookofshaders.com/07/)
+-- [GLSL reference for sin and cos](https://registry.khronos.org/OpenGL-Refpages/gl4/html/sin.xhtml)
+-
+-[Next: Part 9 — Color mixing](part09_color_mixing.md)
+diff --git a/shaders/painting_with_math/part08_extensions.md b/shaders/painting_with_math/part08_extensions.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..18a20f032d6deed820395ae9f940f08b5b79dda6
+--- /dev/null
++++ b/shaders/painting_with_math/part08_extensions.md
+@@ -0,0 +1,41 @@
++---
++title: Part 8 — Extensions (optional)
++---
++# {{ page.title }}
++
++These are optional explorations your students can toggle on/off.
++
++### A. Post “blur” (cheap, approximate)
++
++Sample a few neighbours and average. (This is a **post** effect; keep kernel tiny—too big is slow.)
++
++```glsl
++// After computing 'col' (before writing fragColor):
++vec3 blurCol = vec3(0.0);
++vec2 px = 1.0 / iResolution.xy;      // pixel size in UV of fragCoord-space
++
++// tiny cross-kernel in screen space
++blurCol += texture(iChannel0, fragCoord / iResolution.xy).rgb; // if you have an input; else, skip
++// If no iChannel0, emulate by re-evaluating your scene at small uv offsets (costly).
++// For teaching, explain idea rather than enabling by default.
++
++vec3 mixed = mix(col, blurCol, 0.0);  // keep 0.0 unless you actually compute blurCol
++```
++
++> Note: In pure ShaderToy without textures, true post-blur means re-running your scene at neighbour UVs. Keep the kernel tiny (e.g. 5 taps) to stay fast.
++
++### B. More color mixing
++
++* Mix two palettes: `mix(palette(t), palette(t+0.5), 0.5)`.
++* Index-based accents: add a thin highlight when `fract(i*0.618+ t*0.1) < 0.1`.
++
++### C. Interactivity
++
++* React to mouse: `vec2 m = (iMouse.z>0.) ? (iMouse.xy*2.0 - iResolution.xy)/iResolution.y : vec2(0.0);`
++* Tie `center` or `radius` to `m`.
++
++**What’s new**
++
++* Demonstrated the concept of post-process blur and more playful color mixing.
++
++[Back: Part 7 — Final shader](part07_final_shader.md)
+diff --git a/shaders/painting_with_math/part09_color_mixing.md b/shaders/painting_with_math/part09_color_mixing.md
+deleted file mode 100644
+index 4c5a12c317bf5d3d88788dc8c021729c9db27fa5..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part09_color_mixing.md
++++ /dev/null
+@@ -1,47 +0,0 @@
+----
+-title: Part 9 — Color mixing
+----
+-# {{ page.title }}
+-
+-**New concept:** Interpolate colors with `mix(a,b,t)` where `t∈[0,1]`.
+-
+-**What changed:** A background gradient + time-cycling tint on shapes.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect;
+-
+-    vec2 c1 = vec2(-0.3 + 0.25*cos(iTime*0.8),  0.20 + 0.20*sin(iTime*0.7));
+-    vec2 c2 = vec2( 0.3 + 0.25*sin(iTime*0.9), -0.20 + 0.20*cos(iTime*0.6));
+-
+-    float sd = min(sdfCircle(p, c1, 0.35),
+-                   sdfCircle(p, c2, 0.35));
+-
+-    // Background gradient
+-    vec3 bg  = mix(vec3(0.08,0.10,0.18), vec3(0.18,0.10,0.08), uv.x);
+-
+-    // Time-varying tint: phase-shifted sines for R,G,B
+-    vec3 tint = 0.5 + 0.5 * vec3(
+-        sin(iTime*0.6 + 0.0),
+-        sin(iTime*0.6 + 2.1),
+-        sin(iTime*0.6 + 4.2)
+-    );
+-
+-    float edge = smoothstep(0.0, 0.01, sd);
+-    vec3  col  = mix(bg, tint, 1.0 - edge); // draw shape over bg
+-
+-    fragColor = vec4(col, 1.0);
+-}
+-```
+-
+-
+-### Further reading
+-- [The Book of Shaders — Color](https://thebookofshaders.com/04/)
+-- [GLSL reference for mix](https://registry.khronos.org/OpenGL-Refpages/gl4/html/mix.xhtml)
+-
+-[Next: Part 10 — Glow](part10_glow.md)
+diff --git a/shaders/painting_with_math/part10_glow.md b/shaders/painting_with_math/part10_glow.md
+deleted file mode 100644
+index e6d03d2bb969a9e91c4e0a8984fa14df7e06c69f..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part10_glow.md
++++ /dev/null
+@@ -1,55 +0,0 @@
+----
+-title: Part 10 — Glow
+----
+-# {{ page.title }}
+-
+-**New concept:** Use SDF to build a **glow** via exponential falloff for `sd>0`.
+-
+-**What changed:** Add an additive halo based on positive distance.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-float glowFromSDF(float sd, float strength, float tightness){
+-    float g = exp(-tightness * max(sd, 0.0)); // decay outside the edge
+-    return clamp(g * strength, 0.0, 1.0);
+-}
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect;
+-
+-    vec2 c1 = vec2(-0.3 + 0.25*cos(iTime*0.8),  0.20 + 0.20*sin(iTime*0.7));
+-    vec2 c2 = vec2( 0.3 + 0.25*sin(iTime*0.9), -0.20 + 0.20*cos(iTime*0.6));
+-
+-    float sd1 = sdfCircle(p, c1, 0.35);
+-    float sd2 = sdfCircle(p, c2, 0.35);
+-    float sd  = min(sd1, sd2);
+-
+-    vec3 bg   = mix(vec3(0.06,0.06,0.10), vec3(0.13,0.10,0.08), uv.x);
+-    vec3 tint = 0.5 + 0.5 * vec3(
+-        sin(iTime*0.6 + 0.0),
+-        sin(iTime*0.6 + 2.1),
+-        sin(iTime*0.6 + 4.2)
+-    );
+-
+-    float edge = smoothstep(0.0, 0.01, sd);
+-    vec3  base = mix(bg, tint, 1.0 - edge);
+-
+-    float glow = glowFromSDF(sd, 0.9, 8.0);
+-    vec3  col  = base + tint * glow * 0.6; // additive halo
+-
+-    fragColor = vec4(col, 1.0);
+-}
+-```
+-
+-> **Math note:** Exponential decay `e^{-k·sd}` gives a smooth halo whose width is controlled by `k` (“tightness”).
+-
+-
+-### Further reading
+-- [Inigo Quilez — Distance functions](https://iquilezles.org/articles/distfunctions/)
+-- [GLSL reference for exp](https://registry.khronos.org/OpenGL-Refpages/gl4/html/exp.xhtml)
+-
+-[Next: Part 11 — Smooth union](part11_smooth_union.md)
+diff --git a/shaders/painting_with_math/part11_smooth_union.md b/shaders/painting_with_math/part11_smooth_union.md
+deleted file mode 100644
+index 5f09ba6021ab15e52bc92e38ae36538dda902f85..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part11_smooth_union.md
++++ /dev/null
+@@ -1,32 +0,0 @@
+----
+-title: Part 11 — Smooth union
+----
+-# {{ page.title }}
+-
+-**New concept:** Replace sharp `min` with **smooth min `smin`** to blend shapes organically.
+-Parameter `k` controls softness (larger = softer).
+-
+-**What changed:** Use `smin` when combining SDFs.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-// Smooth min blend (IQ-style)
+-float smin(float a, float b, float k){
+-    float h = clamp(0.5 + 0.5*(b - a)/k, 0.0, 1.0);
+-    return mix(b, a, h) - k*h*(1.0 - h);
+-}
+-```
+-
+-Use it instead of `min(sd1, sd2)`:
+-
+-```glsl
+-float sd = smin(sd1, sd2, 0.25); // try k in [0.05 .. 0.5]
+-```
+-
+-
+-### Further reading
+-- [Inigo Quilez — Smooth minimum](https://iquilezles.org/articles/smin/)
+-- [GLSL reference for mix](https://registry.khronos.org/OpenGL-Refpages/gl4/html/mix.xhtml)
+-
+-[Next: Part 12 — Interactivity](part12_interactivity.md)
+diff --git a/shaders/painting_with_math/part12_interactivity.md b/shaders/painting_with_math/part12_interactivity.md
+deleted file mode 100644
+index 10a248235df1c7628aab92fcbc11a3b817e5d19e..0000000000000000000000000000000000000000
+--- a/shaders/painting_with_math/part12_interactivity.md
++++ /dev/null
+@@ -1,40 +0,0 @@
+----
+-title: Part 12 — Interactivity
+----
+-# {{ page.title }}
+-
+-**New concept:** Use `iMouse.xy` to control a shape.
+-**What changed:** Convert mouse pixels → UV → centered → aspect-corrected.
+-
+-```glsl
+-float sdfCircle(vec2 p, vec2 c, float r){ return length(p - c) - r; }
+-
+-void mainImage(out vec4 fragColor, in vec2 fragCoord) {
+-    vec2 uv      = fragCoord / iResolution.xy;
+-    vec2 p       = uv * 2.0 - 1.0;
+-    float aspect = iResolution.x / iResolution.y;
+-    p.x *= aspect;
+-
+-    // If mouse is down (iMouse.z>0), place circle at mouse; else center
+-    vec2 muv = iMouse.z > 0.0 ? (iMouse.xy / iResolution.xy) : vec2(0.5);
+-    vec2 mc  = muv * 2.0 - 1.0;
+-    mc.x *= aspect;
+-
+-    float sd   = sdfCircle(p, mc, 0.3);
+-    float edge = smoothstep(0.0, 0.01, sd);
+-
+-    vec3 bg  = vec3(0.05,0.07,0.10);
+-    vec3 ink = vec3(0.85,0.65,0.30);
+-
+-    vec3 col = mix(bg, ink, 1.0 - edge);
+-    fragColor = vec4(col, 1.0);
+-}
+-```
+-
+-
+-
+-### Further reading
+-- [The Book of Shaders — Uniforms](https://thebookofshaders.com/02/)
+-- [Shadertoy docs — iMouse](https://www.shadertoy.com/howto)
+-
+-[Back to workshop overview](index.md)

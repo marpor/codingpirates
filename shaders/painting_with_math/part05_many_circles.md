@@ -1,0 +1,49 @@
+---
+title: Part 5 — Many circles (loops)
+---
+# {{ page.title }}
+
+Now we’ll draw **N** circles in a loop, offsetting each center and shrinking the radius a bit.
+
+```glsl
+void mainImage(out vec4 fragColor, in vec2 fragCoord)
+{
+    vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
+
+    float t = iTime * 0.5;
+
+    vec3 col = vec3(0.0);              // accumulate here
+
+    const float N = 12.0;              // number of circles
+    for (float i = 0.0; i < N; i++)
+    {
+        // Each circle gets a different center and radius
+        vec2 center = vec2(
+            sin(3.1*i + 0.8*t),
+            cos(2.3*i - 0.6*t)
+        ) * 0.7;
+
+        float radius = 1.2 - i/(N*2.0);
+
+        float dist = length(uv - center);
+        float sd   = abs(dist - radius);
+
+        float smoothingRadius = 0.02;
+        float c = smoothstep(smoothingRadius, 0.0, sd);
+
+        // Add brighter contribution for stronger circles
+        col += vec3(pow(c, 2.0));
+    }
+
+    col /= N;                           // average
+
+    fragColor = vec4(col, 1.0);
+}
+```
+
+**What’s new**
+
+* Introduced a **for-loop** to place many circles.
+* **Accumulate** contributions and average.
+
+[Back: Part 4 — Animation](part04_animation.md) • [Next: Part 6 — Color palettes](part06_color_palettes.md)
