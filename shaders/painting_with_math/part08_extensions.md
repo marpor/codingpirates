@@ -40,4 +40,8 @@ vec3 mixed = mix(col, blurCol, 0.0);  // keep 0.0 unless you actually compute bl
 
 * Demonstrated the concept of post-process blur and more playful color mixing.
 
+### Further reading
+- [Inigo Quilez — Image blur](https://iquilezles.org/articles/blur/)
+- [Shadertoy — Mouse and keyboard input](https://www.shadertoy.com/howto#mouse)
+
 [Back: Part 7 — Final shader](part07_final_shader.md)

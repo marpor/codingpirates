@@ -53,6 +53,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Added a **palette** function and mixed color per-circle.
 * Used **`pow`** to boost contrast.
 
+### Further reading
+- [Inigo Quilez — Color palettes](https://iquilezles.org/articles/palettes/)
+- [The Book of Shaders — Color](https://thebookofshaders.com/05/)
+
 [Back: Part 5 — Many circles](part05_many_circles.md)
 
 [Next: Part 7 — Final shader polish](part07_final_shader.md)

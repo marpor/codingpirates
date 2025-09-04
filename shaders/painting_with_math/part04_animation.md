@@ -34,6 +34,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 * Introduced **time** to animate position.
 
+### Further reading
+- [Shadertoy — Uniforms (iTime)](https://www.shadertoy.com/howto#time)
+- [Inigo Quilez — Lissajous curves](https://iquilezles.org/articles/lissajous/)
+
 [Back: Part 3 — Soft edges](part03_soft_edges.md)
 
 [Next: Part 5 — Many circles (loops)](part05_many_circles.md)

@@ -48,6 +48,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Introduced a **for-loop** to place many circles.
 * **Accumulate** contributions and average.
 
+### Further reading
+- [The Book of Shaders — Iteration](https://thebookofshaders.com/07/)
+- [GLSL for-loop syntax](https://registry.khronos.org/OpenGL-Refpages/gl4/html/for.xhtml)
+
+
 [Back: Part 4 — Animation](part04_animation.md)
 
 [Next: Part 6 — Color palettes](part06_color_palettes.md)

@@ -5,7 +5,7 @@ title: Part 2 — A Single Circle
 
 Circles show up everywhere—from bubbles to planets. In math, a circle means every point is the same distance from one center point. We'll teach the shader this rule so it can paint a perfect circle for us.
 
-A circle is just “all points at distance `r` from a center”. Distance in 2D is `length(uv - center)`.
+A circle is just “all points at distance `r` from a center”. That distance comes from the **Pythagorean theorem**: for `dx` and `dy`, `distance = sqrt(dx*dx + dy*dy)`. Comparing it with the radius is the classic circle equation `x^2 + y^2 = r^2` in disguise. GLSL's `length` function crunches that square-root math for us, so `length(uv - center)` does it all.
 
 ```glsl
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
@@ -30,6 +30,8 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 ```
 
 ### Further reading
+- [Khan Academy — Distance formula & Pythagorean theorem](https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-between-points/a/distance-formula)
+- [Khan Academy — Equation of a circle](https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-circle-equations/v/equation-of-a-circle)
 - [Inigo Quilez — 2D distance functions](https://iquilezles.org/articles/distfunctions2d/)
 - [GLSL reference for length](https://registry.khronos.org/OpenGL-Refpages/gl4/html/length.xhtml)
 

@@ -31,6 +31,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Introduced a centered `uv` space.
 * Showed a quick gradient to prove it works.
 
+### Further reading
+- [The Book of Shaders — Coordinates](https://thebookofshaders.com/02/)
+- [LearnOpenGL — Coordinate Systems](https://learnopengl.com/Getting-started/Coordinate-Systems)
+
+
 [Back: Part 0 — Hello GPU](part00_hello_gpu.md)
 
 [Next: Part 2 — A single circle](part02_single_circle.md)

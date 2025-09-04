@@ -67,6 +67,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Scaled **smoothing** to the scene and boosted contrast with `pow`.
 * Final **palette** timing ties color to circle index for variety.
 
+### Further reading
+- [The Book of Shaders — Patterns](https://thebookofshaders.com/09/)
+- [Shadertoy — FAQ and tips](https://www.shadertoy.com/howto)
+
 [Back: Part 6 — Color palettes](part06_color_palettes.md)
 
 [Next: Part 8 — Extensions (optional)](part08_extensions.md)

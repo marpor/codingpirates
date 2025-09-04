@@ -36,6 +36,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Switched from `step` to **`smoothstep`** for anti-aliased edges.
 * Used `sd = abs(dist - radius)` to make a **ring**. (If you want a filled circle, use `c = 1.0 - smoothstep(radius, radius + smoothingRadius, dist);`)
 
+### Further reading
+- [Inigo Quilez — Signed distance functions](https://iquilezles.org/articles/distfunctions/)
+- [GLSL reference for smoothstep](https://registry.khronos.org/OpenGL-Refpages/gl4/html/smoothstep.xhtml)
+
 [Back: Part 2 — A single circle](part02_single_circle.md)
 
 [Next: Part 4 — Simple animation](part04_animation.md)
