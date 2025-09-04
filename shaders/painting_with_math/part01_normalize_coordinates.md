@@ -20,6 +20,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
 ### Further reading
 - [The Book of Shaders — Uniforms](https://thebookofshaders.com/02/)
-- [GLSL reference for vec2](https://registry.khronos.org/OpenGL-Refpages/gl4/html/vec.xhtml)
+- [vec2 reference](https://thebookofshaders.com/glossary/?search=vec2)
 
 [Next: Part 2 — Recenter](part02_recenter.md)
