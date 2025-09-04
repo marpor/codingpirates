@@ -3,6 +3,8 @@ title: Part 7 — Final shader (polish + parameters)
 ---
 # {{ page.title }}
 
+By now you know how to position shapes, smooth their edges, animate them, and color them. In this step we'll combine all of those tricks into one polished piece. We'll also play with the numbers to see how small changes create big differences.
+
 We’ll crank up the count, tune motion via incommensurate frequencies, and match the target structure.
 
 ```glsl
@@ -65,4 +67,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Scaled **smoothing** to the scene and boosted contrast with `pow`.
 * Final **palette** timing ties color to circle index for variety.
 
-[Back: Part 6 — Color palettes](part06_color_palettes.md) • [Next: Part 8 — Extensions (optional)](part08_extensions.md)
+[Back: Part 6 — Color palettes](part06_color_palettes.md)
+
+[Next: Part 8 — Extensions (optional)](part08_extensions.md)

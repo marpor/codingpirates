@@ -3,6 +3,8 @@ title: Part 1 — Normalize coordinates
 ---
 # {{ page.title }}
 
+Screens are made of tiny squares called *pixels*. ShaderToy gives us each pixel's position in screen pixels, starting from the bottom-left corner. That works for computers, but those big numbers are awkward for math. Before we draw anything, we'll squish and shift those positions into a smaller, centered space that's easier to reason about.
+
 Pixels arrive in **screen coordinates** (`fragCoord`) like `(x, y)` in pixels. To make math easier, we’ll convert to a centered, square-ish space called **uv**:
 
 * origin `(0,0)` in the **center**
@@ -28,5 +30,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 * Introduced a centered `uv` space.
 * Showed a quick gradient to prove it works.
+
+[Back: Part 0 — Hello GPU](part00_hello_gpu.md)
 
 [Next: Part 2 — A single circle](part02_single_circle.md)

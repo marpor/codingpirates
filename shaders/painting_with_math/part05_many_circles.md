@@ -3,6 +3,8 @@ title: Part 5 — Many circles (loops)
 ---
 # {{ page.title }}
 
+Computers love repetition—they can do the same job thousands of times in a blink. Instead of writing code for every single circle, we'll use a loop to repeat the drawing steps. Each pass through the loop tweaks the circle's position and size, giving us a swarm of shapes with very little code.
+
 Now we’ll draw **N** circles in a loop, offsetting each center and shrinking the radius a bit.
 
 ```glsl
@@ -46,4 +48,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Introduced a **for-loop** to place many circles.
 * **Accumulate** contributions and average.
 
-[Back: Part 4 — Animation](part04_animation.md) • [Next: Part 6 — Color palettes](part06_color_palettes.md)
+[Back: Part 4 — Animation](part04_animation.md)
+
+[Next: Part 6 — Color palettes](part06_color_palettes.md)

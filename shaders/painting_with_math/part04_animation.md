@@ -3,6 +3,8 @@ title: Part 4 — Simple animation
 ---
 # {{ page.title }}
 
+Static images are cool, but animation brings them to life. ShaderToy gives us a handy timer called `iTime` that tells us how many seconds have passed. By plugging that timer into math functions like `sin` and `cos`, we can make our shapes glide and bounce without any complicated logic.
+
 Let’s move the circle with time (`iTime`, seconds). Sinusoidal motion keeps values in `[-1, 1]`.
 
 ```glsl
@@ -32,4 +34,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 * Introduced **time** to animate position.
 
-[Back: Part 3 — Soft edges](part03_soft_edges.md) • [Next: Part 5 — Many circles (loops)](part05_many_circles.md)
+[Back: Part 3 — Soft edges](part03_soft_edges.md)
+
+[Next: Part 5 — Many circles (loops)](part05_many_circles.md)

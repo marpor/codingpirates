@@ -3,6 +3,8 @@ title: Part 8 — Extensions (optional)
 ---
 # {{ page.title }}
 
+After building the main effect, you might be curious about what else is possible. Think of this section as a playground: try small changes, see what happens, and build your own style. None of these steps are required, but they're great experiments to push your shader skills further.
+
 These are optional explorations your students can toggle on/off.
 
 ### A. Post “blur” (cheap, approximate)

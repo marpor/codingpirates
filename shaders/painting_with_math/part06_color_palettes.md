@@ -3,6 +3,8 @@ title: Part 6 — Color palettes
 ---
 # {{ page.title }}
 
+Our circles have been plain so far. Screens make color by blending red, green, and blue light. If we choose those numbers carefully, we can get beautiful gradients. A *palette* function turns one number into a matching set of colors, giving our art a coordinated look.
+
 We’ll color each circle using a compact cosine palette. Small changes in `t` produce smooth, rich colors.
 
 ```glsl
@@ -51,4 +53,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Added a **palette** function and mixed color per-circle.
 * Used **`pow`** to boost contrast.
 
-[Back: Part 5 — Many circles](part05_many_circles.md) • [Next: Part 7 — Final shader polish](part07_final_shader.md)
+[Back: Part 5 — Many circles](part05_many_circles.md)
+
+[Next: Part 7 — Final shader polish](part07_final_shader.md)

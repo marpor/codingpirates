@@ -3,7 +3,9 @@ title: Part 3 — Soft edges (sdf + smoothstep)
 ---
 # {{ page.title }}
 
-Hard edges alias. Let’s build a tiny “soft edge” with an **SDF** (signed distance function) idea for a circle:
+Straight-cut shapes can look jagged, like old video game graphics. To make things smoother we measure how far each pixel is from the perfect edge and fade the color as we move away. This idea is called a *signed distance function* (SDF), and it lets us draw soft outlines without blurry images.
+
+Let’s build a tiny “soft edge” with an **SDF** (signed distance function) idea for a circle:
 `sd = abs(dist - radius)` is small near the ring. Then we smooth it.
 
 ```glsl
@@ -34,4 +36,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * Switched from `step` to **`smoothstep`** for anti-aliased edges.
 * Used `sd = abs(dist - radius)` to make a **ring**. (If you want a filled circle, use `c = 1.0 - smoothstep(radius, radius + smoothingRadius, dist);`)
 
-[Back: Part 2 — A single circle](part02_single_circle.md) • [Next: Part 4 — Simple animation](part04_animation.md)
+[Back: Part 2 — A single circle](part02_single_circle.md)
+
+[Next: Part 4 — Simple animation](part04_animation.md)
