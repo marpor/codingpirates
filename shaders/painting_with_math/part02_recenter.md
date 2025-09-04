@@ -12,8 +12,8 @@ title: Part 2 — Recenter
 
 ```glsl
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-    vec2 uv = fragCoord / iResolution.xy; 
-    vec2 p  = uv * 2.0 - 1.0; // center is now (0,0)
+    vec2 p = fragCoord / iResolution.xy; 
+    p  *= 2.0 - 1.0; // center is now (0,0)
 
     // Visual hint: tint blue where x>0, red where y>0
     vec3 col = vec3(0.0);

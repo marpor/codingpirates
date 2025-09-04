@@ -13,8 +13,8 @@ title: Part 3 — Distance (Pythagoras) draws a circle
 
 ```glsl
 void mainImage(out vec4 fragColor, in vec2 fragCoord) {
-    vec2 uv = fragCoord / iResolution.xy;
-    //vec2 p  = uv * 2.0 - 1.0;
+    vec2 p = fragCoord / iResolution.xy;
+    p *= 2.0 - 1.0;
 
     float r = 0.5;             // radius in [-1,1] space
     float d = length(p);       // sqrt(x^2 + y^2)
