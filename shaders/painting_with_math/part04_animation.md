@@ -1,5 +1,5 @@
 ---
-title: Part 4 — Simple animation
+title: Part 4 - Simple animation
 ---
 # {{ page.title }}
 
@@ -12,10 +12,14 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
     vec2 uv = (fragCoord * 2.0 - iResolution.xy) / iResolution.y;
 
-    float t = iTime * 0.75;            // animation speed
+    float t = iTime * 0.75; // animation speed
 
-    // Move the center along a lissajous-like path
-    vec2 center = vec2(sin(t*1.7), cos(t*1.1)) * 0.4;
+    // Move the center with different frequency along x and y, up to 0.4 away from the middle
+    vec2 center = vec2(
+            sin(t*2.7), 
+            sin(t*2.1)
+        ) * 0.4;
+        
     float radius = 0.6;
 
     float dist = length(uv - center);

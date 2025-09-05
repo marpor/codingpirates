@@ -1,5 +1,5 @@
 ---
-title: Part 1 — Normalize coordinates
+title: Part 1 - Normalize coordinates
 ---
 # {{ page.title }}
 
@@ -25,6 +25,14 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     fragColor = vec4(col, 1.0);
 }
 ```
+
+To see your changes, press the little arrow in the lower-left corner, or press `Alt+Enter`.
+![Compile Shader](res/compile_button.png)
+
+It should now look like this:
+
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/3fjyWV" allowfullscreen></iframe></p>
+
 
 **What’s new vs Part 0**
 

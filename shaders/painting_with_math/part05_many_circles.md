@@ -1,5 +1,5 @@
 ---
-title: Part 5 — Many circles (loops)
+title: Part 5 - Many circles (loops)
 ---
 # {{ page.title }}
 
@@ -19,12 +19,14 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     const float N = 12.0;              // number of circles
     for (float i = 0.0; i < N; i++)
     {
-        // Each circle gets a different center and radius
+        // Each circle gets a different center and radius, 
+        // we multiply by i to get some variation
         vec2 center = vec2(
             sin(3.1*i + 0.8*t),
             cos(2.3*i - 0.6*t)
         ) * 0.7;
 
+        // Vary radius for each circle
         float radius = 1.2 - i/(N*2.0);
 
         float dist = length(uv - center);

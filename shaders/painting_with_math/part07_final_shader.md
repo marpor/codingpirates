@@ -73,4 +73,4 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 [Back: Part 6 — Color palettes](part06_color_palettes.md)
 
-[Next: Part 8 — Extensions (optional)](part08_extensions.md)
+<!--[Next: Part 8 — Extensions (optional)](part08_extensions.md)-->

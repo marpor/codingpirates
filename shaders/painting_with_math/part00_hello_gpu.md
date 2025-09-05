@@ -1,5 +1,5 @@
 ---
-title: Part 0 — Hello, GPU
+title: Part 0 - Hello, GPU
 ---
 # {{ page.title }}
 
@@ -32,7 +32,7 @@ To see your changes, press the little arrow in the lower-left corner, or press `
 
 It should now look like this:
 
-<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe></p>
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD" allowfullscreen></iframe></p>
 
 Very red, but not very exciting yet. Let's keep going...
 

@@ -8,9 +8,10 @@ Our circles have been plain so far. Screens make color by blending red, green, a
 We’ll color each circle using a compact cosine palette. Small changes in `t` produce smooth, rich colors.
 
 ```glsl
-// Cosine palette (Inigo Quilez–style)
+// Cosine palette
 vec3 palette(float t)
 {
+    // Numbers chosen here semi-randomly. Try adjusting the different numbers to get colors you like
     vec3 a = vec3(1.0);
     vec3 b = vec3(0.123, 0.456, 0.789);
     return a + cos(3.0 * (a * t + b));
