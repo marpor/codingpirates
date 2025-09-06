@@ -42,9 +42,8 @@ It should now look like this:
 * Used `sd = abs(dist - radius)` to make a **ring**. (If you want a filled circle, use `c = 1.0 - smoothstep(radius, radius + smoothingRadius, dist);`)
 
 ### Further reading
-- [Inigo Quilez — Signed distance functions](https://iquilezles.org/articles/distfunctions/)
+- [smoothstep](https://thebookofshaders.com/glossary/?search=smoothstep)
 - [Wikipedia - Signed distance function](https://en.wikipedia.org/wiki/Signed_distance_function)
-- [GLSL reference for smoothstep](https://registry.khronos.org/OpenGL-Refpages/gl4/html/smoothstep.xhtml)
 
 [Back: Part 2 — A single circle](part02_single_circle.md)
 

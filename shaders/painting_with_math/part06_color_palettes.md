@@ -56,7 +56,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 ### Further reading
 - [Inigo Quilez — Color palettes](https://iquilezles.org/articles/palettes/)
-- [The Book of Shaders — Color](https://thebookofshaders.com/05/)
+- [The Book of Shaders — Colors](https://thebookofshaders.com/06/)
 
 [Back: Part 5 — Many circles](part05_many_circles.md)
 

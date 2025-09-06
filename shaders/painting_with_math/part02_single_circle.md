@@ -35,10 +35,12 @@ It should now look like this:
 
 
 ### Further reading
-- [Khan Academy — Distance formula & Pythagorean theorem](https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-between-points/a/distance-formula)
+<!--- [Khan Academy — Distance formula & Pythagorean theorem](https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-distance-between-points/a/distance-formula)
 - [Khan Academy — Equation of a circle](https://www.khanacademy.org/math/geometry/hs-geo-analytic-geometry/hs-geo-circle-equations/v/equation-of-a-circle)
-- [Inigo Quilez — 2D distance functions](https://iquilezles.org/articles/distfunctions2d/)
 - [GLSL reference for length](https://registry.khronos.org/OpenGL-Refpages/gl4/html/length.xhtml)
+-->
+- [length](https://thebookofshaders.com/glossary/?search=length)
+- [Inigo Quilez — 2D distance functions](https://iquilezles.org/articles/distfunctions2d/)
 
 [Back: Part 1 — Normalize coordinates](part01_normalize_coordinates.md)
 

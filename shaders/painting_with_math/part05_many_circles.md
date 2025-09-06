@@ -51,8 +51,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 * **Accumulate** contributions and average.
 
 ### Further reading
-- [The Book of Shaders — Iteration](https://thebookofshaders.com/07/)
-- [GLSL for-loop syntax](https://registry.khronos.org/OpenGL-Refpages/gl4/html/for.xhtml)
+- [GLSL iteration]https://learnwebgl.brown37.net/12_shader_language/glsl_control_structures.html#iteration)
 
 
 [Back: Part 4 — Animation](part04_animation.md)

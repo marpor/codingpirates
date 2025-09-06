@@ -38,9 +38,12 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
 * Introduced **time** to animate position.
 
+
 ### Further reading
+
+- [sin - Book of Shaders](https://thebookofshaders.com/glossary/?search=sin)
+- [sin - GeoGebra](https://www.geogebra.org/calculator/zej9tece)
 - [Shadertoy — Uniforms (iTime)](https://www.shadertoy.com/howto#time)
-- [Inigo Quilez — Lissajous curves](https://iquilezles.org/articles/lissajous/)
 
 [Back: Part 3 — Soft edges](part03_soft_edges.md)
 
