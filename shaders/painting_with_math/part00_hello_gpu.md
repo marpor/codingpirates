@@ -32,7 +32,9 @@ To see your changes, press the little arrow in the lower-left corner, or press `
 
 It should now look like this:
 
-<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD" allowfullscreen></iframe></p>
+![Hello GPU](res/image.png)
+
+<!--<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD" allowfullscreen></iframe></p>-->
 
 Very red, but not very exciting yet. Let's keep going...
 

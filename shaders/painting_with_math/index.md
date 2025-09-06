@@ -3,7 +3,9 @@ title: Shaders Workshop - Painting with Math
 ---
 # {{ page.title }}
 
-<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfByDG" allowfullscreen></iframe></p>
+In this tutorial we will build a shader that looks like this - step by step:
+
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD" allowfullscreen></iframe></p>
 
 # Quick Start
 
