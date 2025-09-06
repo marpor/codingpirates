@@ -12,7 +12,7 @@ A **fragment shader** is a small program that gets runs once **per pixel** to de
 >
 > The shader answers using math.
 >
-> In ShaderToy the main function is called `mainImage`, and it receives an input `fragCoord` to indicate *what* current pixel coordinate in screen pixels (x,y) it's going to color.
+> In ShaderToy the main function is called `mainImage`, and it receives an input `fragCoord` to indicate what current pixel coordinate in screen pixels (x,y) it's going to color.
 >
 > The color should be written (assigned) to the `fragColor` variable.
 
