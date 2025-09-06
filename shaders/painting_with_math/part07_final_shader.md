@@ -16,6 +16,14 @@ vec3 palette(float t)
     return a + cos(3.0 * (a * t + b));
 }
 
+// Smooth cosine palette: returns a nice RGB for input t
+vec3 palette(float t)
+{
+    vec3 a = vec3(1.0);
+    vec3 b = vec3(0.123, 0.456, 0.789);
+    return a + cos(3.0 * (a * t + b));
+}
+
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
     // Centered, aspect-correct coordinates
@@ -38,6 +46,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
         );
 
         // Distance from current pixel to this circle's center
+        // length = Pythagoras
         float dist = length(uv - center);
 
         // Make radius a bit smaller for each circle
@@ -51,7 +60,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
         float c = smoothstep(smoothingRadius, 0.0, sd);
 
         // Pick a color using palette, and use pow for increased contrast
-        col += pow(1.25*c, 5.0) * palette(t * i / 28.0);
+        col += pow(1.35*c, 5.0) * palette(t * i / 28.0);
     }
 
     // Average contributions
