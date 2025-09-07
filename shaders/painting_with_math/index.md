@@ -24,6 +24,10 @@ In this tutorial we will build a shader that looks like this - step by step:
 - [Part 7 - Final shader (polish + parameters)](part07_final_shader.md)
 <!-- - [Part 8 - Extensions (optional)](part08_extensions.md)-->
 
+# Tools
+
+- [GraphToy](https://graphtoy.com/)
+
 # Math & Concept Cheatsheet
 
 * **Centered UV:** `uv = (fragCoord*2.0 - iResolution.xy)/iResolution.y`
