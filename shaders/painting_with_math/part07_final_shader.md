@@ -16,14 +16,6 @@ vec3 palette(float t)
     return a + cos(3.0 * (a * t + b));
 }
 
-// Smooth cosine palette: returns a nice RGB for input t
-vec3 palette(float t)
-{
-    vec3 a = vec3(1.0);
-    vec3 b = vec3(0.123, 0.456, 0.789);
-    return a + cos(3.0 * (a * t + b));
-}
-
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
 {
     // Centered, aspect-correct coordinates
