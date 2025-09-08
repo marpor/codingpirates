@@ -45,6 +45,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
+It should now look like this:
+
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/Wcffz8" allowfullscreen></iframe></p>
+
 **What’s new**
 
 * Introduced a **for-loop** to place many circles.

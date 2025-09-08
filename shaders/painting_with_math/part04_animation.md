@@ -34,10 +34,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
-**What’s new**
+It should now look like this:
 
-* Introduced **time** to animate position.
-
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/3cffz8" allowfullscreen></iframe></p>
 
 ### Further reading
 

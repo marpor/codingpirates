@@ -1,5 +1,5 @@
 ---
-title: Part 6 — Color palettes
+title: Part 6 - Color palettes
 ---
 # {{ page.title }}
 
@@ -48,6 +48,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     fragColor = vec4(col, 1.0);
 }
 ```
+
+It should now look like this:
+
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/3fffz8" allowfullscreen></iframe></p>
 
 **What’s new**
 

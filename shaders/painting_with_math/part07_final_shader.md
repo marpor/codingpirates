@@ -70,6 +70,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 }
 ```
 
+<p><iframe width="640" height="360" frameborder="0" src="https://www.shadertoy.com/embed/wfBcDD" allowfullscreen></iframe></p>
+
+
 **What’s new**
 
 * Increased **N** and used **incommensurate frequencies** for richer motion.
