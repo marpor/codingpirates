@@ -119,3 +119,19 @@ Vary R, G and B simultaneously
 
 
 
+# Final code
+
+```glsl
+void mainImage( out vec4 fragColor, in vec2 fragCoord )
+{
+    vec2 uv = vec2(fragCoord / iResolution.xy);
+
+    vec3 color = vec3(
+        sin(iTime * 1.0 )/2.0 + 0.5,
+        sin(iTime * 2.0 )/2.0 + 0.5,
+        sin(iTime * 3.0 )/2.0 + 0.5
+        );
+ 
+    fragColor = vec4(color,1.0);
+}
+```
