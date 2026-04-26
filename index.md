@@ -60,7 +60,14 @@ Templates / Demo Projects
 
 # Other
 
-I highly recommend watching Sebastian Lague's excellent [Coding Adventures](https://www.youtube.com/@SebastianLague) videos. He's exploring various topics using Unity, but the learnings and experiences are well worth a watch no matter what your preferred engine or programming language.
+These are some of my favorite creators in the space, and come with my highest recommendation:
+
+* Sebastian Lague explore various topics using primarily Unity, but the learnings and experiences are well worth a watch no matter what your preferred engine or programming language.
+  - [Coding Adventures](https://www.youtube.com/@SebastianLague) 🔗🎬 (YouTube)  
+* [Inigo Quilez](https://www.youtube.com/c/InigoQuilez) has taken part in creating many great things, including [ShaderToy](https://www.shadertoy.com/). But he also has some pretty cool videos on YouTube:
+   - [Making a heart with Maths](https://www.youtube.com/watch?v=aNR4n0i2ZlM) 🔗🎬 (YouTube)
+   - [I painted a Landscape with Mathematics](https://www.youtube.com/watch?v=BFld4EBO2RE) 🔗🎬 (YouTube)
+* [Freya Holmér](https://www.youtube.com/@acegikmo) - [The Continuity of Splines](https://www.youtube.com/watch?v=jvPPXbo87ds) 🔗🎬 (YouTube)
 
 Enjoy!
 
